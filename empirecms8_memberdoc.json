@@ -1,0 +1,282 @@
+{
+ "meta": {
+  "source": "http://www.phome.net/docs/memberdoc/",
+  "section": "memberdoc",
+  "title": "总览",
+  "version": "8.0",
+  "page_count": 20,
+  "categories": [
+   "会员相关说明文档",
+   "会员空间",
+   "会员管理",
+   "其他会员功能",
+   "总览"
+  ],
+  "order": [
+   "mcquestion",
+   "listmember",
+   "membergroup",
+   "ingroup",
+   "viewgroup",
+   "madmingroup",
+   "clearmember",
+   "memberfield",
+   "memberform",
+   "spacestyle",
+   "spaceadmin",
+   "memberconnect",
+   "buygroup",
+   "listcard",
+   "getfen",
+   "sendemail",
+   "sendmsg",
+   "delmoremsg",
+   "membernamesay",
+   "dtpagetemp"
+  ],
+  "schema": {
+   "pages": "map of page_id -> record",
+   "record.id": "page file id (without .html)",
+   "record.title": "page title",
+   "record.category": "manual section/category",
+   "record.content": "cleaned plain-text content (HTML tags stripped, entities decoded; code such as <?php preserved as readable text)",
+   "record.links": "external (non-phome.net/docs) links found in page",
+   "record.content_len": "character length of content"
+  }
+ },
+ "pages": {
+  "mcquestion": {
+   "id": "mcquestion",
+   "title": "帝国CMS会员相关常见问题",
+   "category": "总览",
+   "content": "帝国CMS会员相关常见问题 \n 帝国CMS会员相关常见问题 \n 会员相关相关常见问题 \n 1、访问前台页面，提示“xxx is close”说明该模块在后台被关闭，如何开启？ \n 答： 后台>系统>系统参数设置>基本属性：关闭前台模块相关功能，去掉对应模块的选择。 \n 2、会员空间在哪开启或关闭？ \n 答： 后台>系统>系统参数设置>用户设置：会员空间 选开启或关闭。(8.0及以上版本还要设置“可使用会员空间的权限组”) \n 3、如何设置注册时不用选择会员组？ \n 答： 改 /e/config/config.php 文件，把 \n$ecms_config['member']['changeregisterurl']=\"ChangeRegister.php\"; \n改为 \n$ecms_config['member']['changeregisterurl']=\"\"; \n保存文件即可。 \n 4、打通多个帝国CMS系统的会员整合与同步： \n 修改配置文件 /e/config/config.php 里的会员表名为同一个即可： \n$ecms_config['member']['tablename']=\" 数据库名.{$dbtbpre}enewsmember \"; //会员表 \n如果要登录同步，还需要将 cookie作用域 和 前台cookie变量前缀 设置为同一个。 \n详细可以看教程： http://www.phome.net/zx/empirecms/member/243.html \n 5、内容页调用当前会员的发布的投稿信息 \n 标签附加SQL条件参数用： \"userid='\".$navinfor['userid'].\"' and ismember=1\" \n 6、怎样获取VIP企业会员列表？ \n 用灵动标签SQL调用： \nselect a.userid,a.username,b.company as title from phome_enewsmember as a LEFT JOIN phome_enewsmemberadd as b ON a.userid=b.userid and a.groupid=VIP企业会员组id order by userid desc limit 10 \n如果只想调用副表还可以用以下SQL调用： \nselect userid,company as title from phome_enewsmemberadd where userid in (select userid from phome_enewsmember where groupid=VIP企业会员组id) order by userid desc limit 10 \n 7、会员空间首页怎么调用会员发表的文章 \n 修改空间首页模板/e/space/template/default/index.temp.php，显示信息的地方加下面代码，表改成要调用的数据表名 \n$spacesql=$empire->query(\"select * from phome_ecms_表 where userid='\".intval($userid).\"' and ismember=1 order by newstime desc limit 10\"); \nwhile($spacer=$empire->fetch($spacesql)) \n{ \n$titleurl=sys_ReturnBqTitleLink($spacer);//链接 \n?> \n \"> \n} \n?> \n 8、用万能标签调用会员列表： \n (1)、 会员所有名字列表：[ecmsinfo]'select username as title from phome_enewsmember limit 10',10,18,0,24,18,0[/ecmsinfo] \n(2)、 会员中企业会员名字列表：[ecmsinfo]'select username as title from phome_enewsmember where groupid=4 limit 10',10,18,0,24,18,0[/ecmsinfo] \n(3)、 企业会员企业名称列表：[ecmsinfo]'select company as title from phome_enewsmemberadd limit 10',10,18,0,24,18,0[/ecmsinfo] \n标签模板中用 [!--title--] 表示名称。 \n 9、怎么把登陆、注册。这些内容添加到自己的主页？ \n 加： \n显示样式修改：后台>模板管理>公共模板>修改JS调用登录模板 \n 10、如何设置不限邮箱注册？ \n 答：后台>系统>系统参数设置>用户设置：把“一个邮箱可注册:”设置为0 \n 11、如何设置不限手册号码注册？ \n 答：后台>系统>系统参数设置>用户设置：把“一个手机号可注册:”设置为0 \n 12、会员空间的信息标签调用教程： \n 功能解密之会员空间信息标签调用： http://www.phome.net/zx/empirecms/doc/166.html \n 13、会员空间的自定义单页面教程： \n 功能解密之会员空间自定义单页面： http://www.phome.net/zx/empirecms/doc/167.html \n 14、会员自定义字段搜索教程： \n 功能解密之会员自定义字段搜索： http://www.phome.net/zx/empirecms/doc/169.html \n 15、会员列表多样式使用说明： \n 功能解密之会员列表多样式： http://www.phome.net/zx/empirecms/doc/170.html \n 16、会员信息调用教程： \n 功能解密之会员信息调用： http://www.phome.net/zx/empirecms/doc/168.html \n 17、会员实名认证接口如何整合？ \n 可以看这个说明： http://www.phome.net/zx/pup/250.html",
+   "links": [
+    {
+     "text": "http://www.phome.net/zx/empirecms/member/243.html",
+     "href": "http://www.phome.net/zx/empirecms/member/243.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/166.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/166.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/167.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/167.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/169.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/169.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/170.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/170.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/168.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/168.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/pup/250.html",
+     "href": "http://www.phome.net/zx/pup/250.html"
+    }
+   ],
+   "content_len": 2546
+  },
+  "listmember": {
+   "id": "listmember",
+   "title": "帝国CMS会员管理",
+   "category": "会员管理",
+   "content": "帝国CMS会员管理 \n 帝国CMS会员管理 \n 会员管理：对前台会员账号进行管理 \n 一、登录后台，单击“ 用户 ”菜单，选择“ 管理会员 ”子菜单，进入管理会员界面： \n 二、进入管理会员界面： \n 三、修改会员： \n 用户名 \n 会员登录用户名。 \n 密码 \n 会员登录密码。 \n 审核 \n 设置会员是否审核，未审核账号不能登录前台。 \n 实名状态 \n 设置账号是否实名过。 \n 所属会员组 \n 选择所属会员组。 \n 所属内部组 \n 选择所属内部组。 \n 邮箱 \n 联系邮箱。 \n 手机号码 \n 注册的手机号码。 \n 绑定手机号 \n 绑定的手机号码，可通过此手机号码进行短信登录。 \n 剩余天数 \n 设置账号有效期，有效期内发布、查看、下载信息不扣点。此有效期用于会员包月类使用。 \n 到期后转向用户组： 设置有效期到期后转到新的会员组。 \n 点数 \n 帐户所剩点数。 \n 帐户余额 \n 帐户预付款金额。 \n 所属管理组 \n 账号所属的管理组。 \n 注册时间 \n 注册时间。 \n 注册IP \n 注册IP。 \n 最后登录 \n 最后登录时间和IP地址、及登录总次数。 \n 空间使用模板 \n 此会员使用的空间模板。 \n 空间名称 \n 会员空间的名称。 \n 空间公告 \n 会员空间的公告。",
+   "links": [],
+   "content_len": 542
+  },
+  "membergroup": {
+   "id": "membergroup",
+   "title": "帝国CMS会员组管理",
+   "category": "会员管理",
+   "content": "帝国CMS会员组管理 \n 帝国CMS会员组管理 \n 会员组管理：对前台会员的权限进行管理 \n 一、登录后台，单击“ 用户 ”菜单，选择“ 会员组 ”子菜单，进入管理会员组界面： \n 二、进入管理会员组界面： \n 三、修改会员组： \n 会员组名称 \n 会员组名。 \n 会员组级别值 \n 填数字，级别值越高权限越大。 \n 最大收藏夹数 \n 前台收藏夹最大数。 \n 每天最大下载数 \n 每天最大下载信息数量，0为不限。（信息下载地址设置会员级别以上有效） \n 每天最大投稿数 \n 每天最大发布信息数据，0为不限。（栏目设置会员发布权限以上有效） \n 投稿信息是否审核 \n 设置发布信息是否要审核。（当栏目设置发布投稿要审核时此项有效） \n 评论是否审核 \n 设置发表评论是否要审核。 \n 最大短信息数 \n 站内信息最大信息存放数。 \n 短信息最大字数 \n 站内信息内容字数限制。 \n 信息使用表单 \n 选择注册与修改资料使用的表单。 \n 前台可注册 \n 选择此会员组前台会员是否可以直接注册。 \n 注册需要审核 \n 选择往此会员组注册的会员是否要审核。 \n 注册认证码 \n 注册时需要填此密码才能注册。 \n 登录认证码 \n 登录时需要填此密码才能登录。 \n 会员默认空间模板 \n 选择注册此会员组的会员默认使用的空间模板。 \n 相关链接： \n 1、帝国CMS功能解密之：多会员组的注册导航制作 \n 2、帝国CMS设置跳过会员注册类型选择",
+   "links": [
+    {
+     "text": "1、帝国CMS功能解密之：多会员组的注册导航制作",
+     "href": "http://www.phome.net/zx/empirecms/doc/154.html"
+    },
+    {
+     "text": "2、帝国CMS设置跳过会员注册类型选择",
+     "href": "http://www.phome.net/zx/empirecms/member/623.html"
+    }
+   ],
+   "content_len": 615
+  },
+  "ingroup": {
+   "id": "ingroup",
+   "title": "帝国CMS会员内部组管理",
+   "category": "会员管理",
+   "content": "帝国CMS会员内部组管理 \n 帝国CMS会员内部组管理 \n 会员内部组管理：对前台会员进行内部分类 \n 一、登录后台，单击“ 用户 ”菜单，选择“ 会员内部组 ”子菜单，进入管理会员内部组界面： \n 二、进入管理会员内部组界面： \n 三、修改会员内部组： \n 组名称 \n 填写组名。 \n 显示排序 \n 值越小越前面。",
+   "links": [],
+   "content_len": 158
+  },
+  "viewgroup": {
+   "id": "viewgroup",
+   "title": "帝国CMS会员访问组管理",
+   "category": "会员管理",
+   "content": "帝国CMS会员访问组管理 \n 帝国CMS会员访问组管理 \n 会员访问组管理：对前台会员的访问或下载权限进行管理 \n 一、登录后台，单击“ 用户 ”菜单，选择“ 会员访问组 ”子菜单，进入管理会员访问组界面： \n 二、进入管理会员访问组界面： \n 三、修改会员访问组： \n 组名称 \n 填写组名。 \n 允许会员组 \n 选择允许的会员组，支持多选。 \n 允许会员内部组 \n 选择允许的会员内部组，支持多选。 \n 允许会员管理组 \n 选择允许的会员管理组，支持多选。 \n 四、管理会员访问组的会员白名单： \n 除了可按会员组、会员内部组、会员管理组限制外，还可以按会员白名单、会员白名单有效期进行限制。",
+   "links": [],
+   "content_len": 298
+  },
+  "madmingroup": {
+   "id": "madmingroup",
+   "title": "帝国CMS会员管理组管理",
+   "category": "会员管理",
+   "content": "帝国CMS会员管理组管理 \n 帝国CMS会员管理组管理 \n 会员管理组管理：前台的管理员组 \n 一、登录后台，单击“ 用户 ”菜单，选择“ 会员管理组 ”子菜单，进入管理会员管理组界面： \n 二、进入管理会员管理组界面： \n 三、修改会员管理组： \n 组名称 \n 填写组名。 \n 管理级别 \n 选择管理组权限：管理员为可管理所有信息、版主为管理对应栏目的信息、实习版主为虚职无权限。 \n 四、管理会员管理组下面的成员：",
+   "links": [],
+   "content_len": 209
+  },
+  "clearmember": {
+   "id": "clearmember",
+   "title": "帝国CMS批量清理会员",
+   "category": "会员管理",
+   "content": "帝国CMS批量清理会员 \n 帝国CMS批量清理会员 \n 批量清理会员：对前台会员的账号进行批量删除 \n 一、登录后台，单击“ 用户 ”菜单，选择“ 批量清理会员 ”子菜单，进入批量清理会员界面： \n 二、进入批量清理会员界面： \n 用户名包含字符 \n 删除用户名包含此字符的会员，空为不限。 \n 邮箱地址包含字符 \n 删除邮箱地址包含此字符的会员，空为不限。 \n 手机号码包含字符 \n 删除手机号码包含此字符的会员，空为不限。 \n 用户ID 介于 \n 删除用户ID之间的会员，空为不限。 \n 所属会员组 \n 删除此会员组的会员。 \n 注册时间 介于 \n 删除注册时间之间的会员，空为不限。 \n 点数 介于 \n 删除剩余点数数量之间的会员，空为不限。 \n 帐户余额 介于 \n 删除预付款金额之间的会员，空为不限。 \n 是否审核 \n 是否只删除审核或未审核会员。",
+   "links": [],
+   "content_len": 379
+  },
+  "memberfield": {
+   "id": "memberfield",
+   "title": "帝国CMS自定义会员字段",
+   "category": "会员管理",
+   "content": "帝国CMS自定义会员字段 \n 帝国CMS自定义会员字段 \n 自定义会员字段：对前台会员的注册资料属性进行管理 \n 一、登录后台，单击“ 用户 ”菜单，选择“ 管理会员字段 ”子菜单，进入管理会员字段界面： \n 二、进入管理会员字段界面： \n 三、修改会员字段： \n 字段名 \n 填写字段名，字段名由英文和数字组成。比如：title。 \n 字段标识 \n 字段标识方便识别字段。比如：标题 \n 字段类型 \n 选择字段的存放类型。 \n 字段长度： 选择字段的存放长度。 \n 输入表单显示元素 \n 选择前台表单录入的方式。 \n 元素长度： 表单元素显示的大小。 \n 初始值 \n 填写字段默认值或选项(多个值用\"回车\"格开；默认选项后面加：:default)。 \n 显示顺序 \n 会员表单的字段显示顺序越小越前面。 \n 输入表单替换html代码 \n 增加字段后自动生成字段显示的html代码内容，增加字段时一般不设置，可增加字段后再修改。 \n 注释 \n 填写备注内容。 \n 相关链接： \n 1、帝国CMS功能解密之：会员自定义字段搜索 \n 2、帝国CMS功能解密之：会员列表多样式",
+   "links": [
+    {
+     "text": "1、帝国CMS功能解密之：会员自定义字段搜索",
+     "href": "http://www.phome.net/zx/empirecms/doc/169.html"
+    },
+    {
+     "text": "2、帝国CMS功能解密之：会员列表多样式",
+     "href": "http://www.phome.net/zx/empirecms/doc/170.html"
+    }
+   ],
+   "content_len": 485
+  },
+  "memberform": {
+   "id": "memberform",
+   "title": "帝国CMS自定义会员表单",
+   "category": "会员管理",
+   "content": "帝国CMS自定义会员表单 \n 帝国CMS自定义会员表单 \n 自定义会员表单：对前台会员的注册表单进行管理 \n 一、登录后台，单击“ 用户 ”菜单，选择“ 管理会员表单 ”子菜单，进入管理会员表单界面： \n 二、进入管理会员表单界面： \n 三、修改会员表单： \n 表单名称 \n 填写表单名称。比如：企业会员表单 \n 选择本表单的字段项 \n 字段标识： 表单中设置项的名称。 录入项： 可以填写内容的字段。 \n 必填项： 设置此字段内容不能为空。 可增加： 字段内容在注册时是否可以填写。 \n 可修改： 字段内容在修改资料时是否可以更改。 搜索项： 此字段在管理会员列表页面是否支持搜索。(e/member/list) \n 前台显示： 此字段内容在查看会员资料页面是否显示。(e/member/ShowInfo) \n 录入表单模板 \n 增加表单后自动生成的表单模板内容，增加表单时一般不设置，可增加表单后再修改。 \n 自动生成表单： 修改表单时可以选择让系统再次自动生成表单模板。 \n 注释 \n 填写备注内容。 \n 相关链接： \n 1、帝国CMS功能解密之：会员自定义字段搜索 \n 2、帝国CMS功能解密之：会员列表多样式 \n 3、帝国CMS功能解密之：多会员组的注册导航制作",
+   "links": [
+    {
+     "text": "1、帝国CMS功能解密之：会员自定义字段搜索",
+     "href": "http://www.phome.net/zx/empirecms/doc/169.html"
+    },
+    {
+     "text": "2、帝国CMS功能解密之：会员列表多样式",
+     "href": "http://www.phome.net/zx/empirecms/doc/170.html"
+    },
+    {
+     "text": "3、帝国CMS功能解密之：多会员组的注册导航制作",
+     "href": "http://www.phome.net/zx/empirecms/doc/154.html"
+    }
+   ],
+   "content_len": 536
+  },
+  "spacestyle": {
+   "id": "spacestyle",
+   "title": "帝国CMS会员空间模板",
+   "category": "会员空间",
+   "content": "帝国CMS会员空间模板 \n 帝国CMS会员空间模板 \n 选择本节内容                                           \n     > 增加会员空间模板步骤说明 \n     > 管理会员空间模板 \n     > 增加会员空间模板 \n     > 会员空间模板文件说明 \n 本功能为对前台会员的个人空间模板进行管理。 \n 一、增加会员空间模板步骤说明： \n 1、先制作好会员空间模板文件（/e/space/template/）； \n 2、登录后台管理会员空间模板里增加刚才做好的空间模板目录； \n 3、前台会员选择会员空间模板测试； \n 4、完成。 \n 二、后台管理会员空间模板 \n 1、登录后台，单击“ 用户 ”菜单，选择“ 管理空间模板 ”子菜单，进入管理空间模板界面： \n 2、进入管理空间模板界面： \n 三、增加会员空间模板： \n 1、先复制/e/space/template目录下的默认模板目录，比如复制“默认企业会员空间模板”，然后目录名称用diytemp，接着修改模板文件： \n 2、模板制作好后，登录后台进入 用户 -> 管理空间模板 \n -> 增加会员空间模板 ，进入增加会员空间模板页面： \n 模板名称 \n 填写模板名称。 \n 模板缩略图 \n 填写模板的预览图。 \n 可选择此模板的会员组 \n 设置可选择此模板的会员组权限(不选为不限制会员组)。 \n 模板目录 \n 填写 /e/space/template/ 目录下的对应模板目录名。 \n 模板说明 \n 填写模板介绍。 \n 3、前台 会员中心 -> 空间设置 -> \n 选择模板 。选择我们增加的空间模板，然后 预览空间 就能看到效果。 \n 4、增加会员空间模板完成。 \n 四、会员空间模板文件说明： \n images \n 存放模板图片和css的目录。 \n feedback.temp.php \n 反馈表单页面模板文件。 \n footer.temp.php \n 页面底部模板文件。 \n header.temp.php \n 页面头部模板文件。 \n gbook.temp.php \n 留言页面模板文件。 \n index.temp.php \n 首页模板文件。 \n list.temp.php \n 列表页模板文件。 \n page.temp.php \n 单页内容模板文件。（使用可看这个教程： 会员空间自定义单页面 ） \n userinfo.temp.php \n 会员简介页面模板文件。 \n （也可依自己需求增加减少模板文件。） \n 相关链接： \n 1、 帝国网站管理系统功能解密之会员空间信息标签调用 \n 2、 帝国网站管理系统功能解密之会员空间自定义单页面",
+   "links": [
+    {
+     "text": "会员空间自定义单页面",
+     "href": "http://www.phome.net/zx/empirecms/doc/167.html"
+    },
+    {
+     "text": "帝国网站管理系统功能解密之会员空间信息标签调用",
+     "href": "http://www.phome.net/zx/empirecms/doc/166.html"
+    },
+    {
+     "text": "帝国网站管理系统功能解密之会员空间自定义单页面",
+     "href": "http://www.phome.net/zx/empirecms/doc/167.html"
+    }
+   ],
+   "content_len": 1126
+  },
+  "spaceadmin": {
+   "id": "spaceadmin",
+   "title": "�۹�CMS��Ա�ռ���Ϣ����",
+   "category": "会员空间",
+   "content": "�۹�CMS��Ա�ռ���Ϣ���� \n �۹�CMS��Ա�ռ���Ϣ���� \n ѡ�񱾽�����                                           \n     > �����ռ����� \n     > �����ռ䷴�� \n ������Ϊ��ǰ̨��Ա�ĸ��˿ռ���ύ��Ϣ���й����� \n һ�������ռ����� \n 1����¼��̨�������� �û� ���˵���ѡ�� �����ռ����� ���Ӳ˵�����������ռ����Խ��棺 \n 2����������ռ����Խ��棺 \n ���������ռ䷴�� \n 1����¼��̨�������� �û� ���˵���ѡ�� �����ռ䷴�� ���Ӳ˵�����������ռ䷴�����棺 \n 2����������ռ䷴�����棺 \n 3���鿴������Ϣ���棺",
+   "links": [],
+   "content_len": 411
+  },
+  "memberconnect": {
+   "id": "memberconnect",
+   "title": "帝国CMS外部登录接口管理",
+   "category": "其他会员功能",
+   "content": "帝国CMS外部登录接口管理 \n 帝国CMS外部登录接口管理 \n 一、外部登录接口功能介绍 \n 通过接口可绑定第三方平台账号来登录网站会员账号。 \n 二、外部登录接口管理 \n 1、登录后台，单击“ 用户 ”菜单，选择“ 管理外部登录接口 ”子菜单，进入管理外部登录接口界面： \n 2、进入管理外部登录接口界面： \n 3、点击“配置接口”，进入接口配置界面： \n 接口类型 \n 接口唯一标识，可由字母和数字组成。 \n 接口状态 \n 设置接口是否开启。 \n 接口名称 \n 填写接口名称。 \n 接口别名 \n 填写接口名称的缩写。 \n 接口描述 \n 填写接口简介。 \n appid \n 填写申请的应用ID。 \n appkey \n 填写申请的应用密钥。 \n 显示排序 \n 设置前台接口显示顺序，值越小越前面。",
+   "links": [],
+   "content_len": 348
+  },
+  "buygroup": {
+   "id": "buygroup",
+   "title": "帝国CMS充值类型管理",
+   "category": "其他会员功能",
+   "content": "帝国CMS充值类型管理 \n 帝国CMS充值类型管理 \n 一、充值类型功能介绍 \n 前台会员通过购买充值类型来升级会员级别或增加点数的功能。 \n 二、增加充值类型 \n 1、登录后台，单击“ 用户 ”菜单，选择“ 管理充值类型 ”子菜单，进入管理充值类型界面： \n 2、进入管理充值类型界面，点击“增加充值类型”按钮进入增加充值类型界面： \n 3、进入增加充值类型界面： \n 类型名称 \n 填写充值类型名称。 \n 购买金额 \n 填写购买此类型所需金额。 \n 充值点数 \n 购买后给会员充值多少点数。 \n 充值有效期 \n 购买后给会员充值多少有效期。 \n 充值设置转向会员组： 购买后给会员升级会员组。 \n 到期后转向的会员组： 有效期到期后转回原来会员组。 \n 显示顺序 \n 设置前台充值页面显示类型顺序。 \n 可购买的会员 \n 选择可购买此充值类型的会员组权限。 \n 类型说明 \n 填写充值类型附加说明。 \n 4、增加后，返回管理充值类型界面：",
+   "links": [],
+   "content_len": 421
+  },
+  "listcard": {
+   "id": "listcard",
+   "title": "帝国CMS点卡管理",
+   "category": "其他会员功能",
+   "content": "帝国CMS点卡管理 \n 帝国CMS点卡管理 \n 一、充值点卡介绍： \n 充值点卡和购买充值类型一样，都是前台会员通过购买充值类型来升级会员级别或增加点数的功能，只是点卡是通过卡号和密码充值，而充值类型是网银购买充值。 \n 二、增加点卡 \n (一)、增加单点卡： \n 1、登录后台，单击“ 用户 ”菜单，选择“ 管理点卡 ”子菜单，进入管理点卡界面： \n 2、进入管理点卡界面，点击“增加点卡”按钮进入增加点卡界面： \n 3、进入增加点卡界面： \n 点卡帐号 \n 填写卡号。 \n 点卡密码 \n 填写卡密码。 \n 点卡金额 \n 点卡面额。 \n 点数 \n 充值后给会员充值多少点数。 \n 充值有效期 \n 充值后给会员充值多少有效期。 \n 充值设置转向会员组： 充值后给会员升级会员组。 \n 到期后转向的会员组： 有效期到期后转回原来会员组。 \n 到期时间 \n 设置点卡的过期时间(0000-00-00为不限制)。 \n (二)、批量增加点卡： \n 1、进入管理点卡界面，点击“批量增加点卡”按钮进入批量增加点卡界面： \n 2、进入批量增加点卡界面： \n 批量生成点卡数量 \n 填写一次要生成多少个点卡。 \n 点卡帐号位数 \n 填写卡号位数。 \n 点卡密码位数 \n 填写卡密码位数。 \n 点卡金额 \n 点卡面额。 \n 点数 \n 充值后给会员充值多少点数。 \n 充值有效期 \n 充值后给会员充值多少有效期。 \n 充值设置转向会员组： 充值后给会员升级会员组。 \n 到期后转向的会员组： 有效期到期后转回原来会员组。 \n 到期时间 \n 设置点卡的过期时间(0000-00-00为不限制)。 \n 三、进入管理点卡界面：",
+   "links": [],
+   "content_len": 701
+  },
+  "getfen": {
+   "id": "getfen",
+   "title": "帝国CMS批量赠送点数",
+   "category": "其他会员功能",
+   "content": "帝国CMS批量赠送点数 \n 帝国CMS批量赠送点数 \n 批量赠送点数： \n 本功能为对前台会员的进行批量增加点数。比如对某某节日庆祝时批量赠送。 \n 1、登录后台，单击“ 用户 ”菜单，选择“ 批量赠送点数 ”子菜单，进入批量赠送点数界面： \n 2、进入批量赠送点数界面：",
+   "links": [],
+   "content_len": 136
+  },
+  "sendemail": {
+   "id": "sendemail",
+   "title": "帝国CMS批量发送邮件",
+   "category": "其他会员功能",
+   "content": "帝国CMS批量发送邮件 \n 帝国CMS批量发送邮件 \n 批量发送邮件：给前台会员批量发送邮件 \n 一、登录后台，单击“ 用户 ”菜单，选择“ 批量发送邮件 ”子菜单，进入批量发送邮件界面： \n 二、进入批量发送邮件界面： \n 接收会员组 \n 选择接收邮件的会员组(全选用\"CTRL+A\",选择多个用CTRL/SHIFT+点击选择)。 \n 接收会员用户名 \n 填写接收的会员用户名列表，多个用户名“|”隔开。 \n 每组发送个数 \n 分组发送设置，防止php超时中断执行。 \n 标题 \n 邮件标题。 \n 内容 \n 邮件内容。",
+   "links": [],
+   "content_len": 260
+  },
+  "sendmsg": {
+   "id": "sendmsg",
+   "title": "帝国CMS批量发送短信息",
+   "category": "其他会员功能",
+   "content": "帝国CMS批量发送短信息 \n 帝国CMS批量发送短信息 \n 批量发送短信息：给前台会员批量发送站内信息 \n 一、登录后台，单击“ 用户 ”菜单，选择“批量发送短信息”子菜单，进入批量发送短信息界面： \n 二、进入批量发送短信息界面： \n 接收会员组 \n 选择接收的会员组(全选用\"CTRL+A\",选择多个用CTRL/SHIFT+点击选择)。 \n 接收会员用户名 \n 填写接收的会员用户名列表，多个用户名“|”隔开。 \n 每组发送个数 \n 分组发送设置，防止php超时中断执行。 \n 标题 \n 信息标题。 \n 内容 \n 信息内容。",
+   "links": [],
+   "content_len": 264
+  },
+  "delmoremsg": {
+   "id": "delmoremsg",
+   "title": "帝国CMS批量删除短信息",
+   "category": "其他会员功能",
+   "content": "帝国CMS批量删除短信息 \n 帝国CMS批量删除短信息 \n 批量删除短信息：对前台会员发送的过期站内信息进行批量删除 \n 一、登录后台，单击“ 用户 ”菜单，选择“ 批量删除短信息 ”子菜单，进入批量删除短信息界面： \n 二、进入批量删除短信息界面： \n 消息类型 \n 选择要删除的短信息类型。 \n 发件人 \n 填写发件人用户名包含字符(不填为不限)。 \n 收件人 \n 填写收件人用户名包含字符(不填为不限)。 \n 包含关键字 \n 填写信息内容包含字符(多个请用\",\"隔开)。 \n 时间 \n 删除日期之间的短信息(不填为不限)。",
+   "links": [],
+   "content_len": 264
+  },
+  "membernamesay": {
+   "id": "membernamesay",
+   "title": "帝国CMS会员相关常用名称介绍",
+   "category": "会员相关说明文档",
+   "content": "帝国CMS会员相关常用名称介绍 \n 帝国CMS会员相关常用名称介绍 \n 会员相关常用名称介绍 \n 1、帝国CMS里的用户和会员区别？ \n 答： 用户是指后台的管理用户，会员是指前台的注册用户，两者没有关联。 \n 2、什么是会员空间？ \n 会员可以将自己发布的信息展示在的会员空间里，有点类似于一个会员一个网站。(默认关闭，要开启需要到系统参数设置里开启) \n 3、什么是会员接口？ \n 将其他系统的会员整合到EmpireCMS的程序。 \n 4、什么是充值类型？ \n 前台会员可通过购买充值类型来升级会员级别或增加点数的功能。 \n 5、什么是点卡充值？ \n 充值点卡和购买充值类型一样，都是前台会员通过购买充值类型来升级会员级别或增加点数的功能，只是点卡是通过卡号和密码充值，而充值类型是网银购买充值。 \n 6、什么是访问组？ \n 通过访问组可按会员组、会员内部组、会员管理组、会员白名单、会员白名单有效期进行访问或下载限制。做收费网站更方便。 \n 7、什么是会员组？ \n 可对前台会员的权限进行分配。 \n 8、什么是会员内部组？ \n 可对前台会员进行内部分类。 \n 9、什么是会员管理组？ \n 前台的管理员组。 \n 10、什么是外部登录接口？ \n 通过此类接口可绑定第三方平台账号来登录网站会员账号。 \n 11、自定义会员字段是什么？ \n 用户可根据自己网站需要增加或减少注册填写项。 \n 12、自定义会员表单是什么？ \n 前台会员的注册表单及填写项设置。",
+   "links": [],
+   "content_len": 628
+  },
+  "dtpagetemp": {
+   "id": "dtpagetemp",
+   "title": "帝国CMS动态页面模板说明",
+   "category": "会员相关说明文档",
+   "content": "帝国CMS动态页面模板说明 \n 帝国CMS动态页面模板说明 \n 动态页面模板说明 (目录：/e/template/) \n 模板名称 \n 模板文件 \n 对应页面 \n 公共引用页面 \n 主界面头部 \n /e/template/incfile/header.php \n 页面的头部内容 \n 主界面尾部 \n /e/template/incfile/footer.php \n 页面的底部内容 \n 会员基本页面 \n 会员注册页面 \n /e/template/member/register.php \n /e/member/register/index.php \n 选择注册类型页面 \n /e/template/member/ChangeRegister.php \n /e/member/register/ChangeRegister.php \n 重发注册激活邮件页面 \n /e/template/member/regsend.php \n /e/member/register/regsend.php \n 会员登录页面 \n /e/template/member/login.php \n /e/member/login/index.php \n 会员登录弹出页面 \n /e/template/member/loginopen.php \n /e/member/login/login.php \n 修改会员信息页面 \n /e/template/member/EditInfo.php \n /e/member/EditInfo/index.php \n 修改会员安全信息页面 \n /e/template/member/EditSafeInfo.php \n /e/member/EditInfo/EditSafeInfo.php \n 取回密码页面 \n /e/template/member/GetPassword.php \n /e/member/GetPassword/index.php \n 取回密码重置页面 \n /e/template/member/getpass.php \n /e/member/GetPassword/getpass.php \n 会员中心首页 \n /e/template/member/cp.php \n /e/member/cp/index.php \n 会员状态页面 \n /e/template/member/my.php \n /e/member/my/index.php \n 查看会员信息页面 \n /e/template/member/ShowInfo.php \n /e/member/ShowInfo/index.php \n 默认会员列表页面 \n /e/template/member/memberlist/1.php \n /e/member/list/index.php \n 修改会员头像页面 \n /e/template/member/EditUpic.php \n /e/member/EditInfo/EditUpic.php \n 会员模块页面 \n 短消息页面 \n 发送站内消息页面 \n /e/template/member/AddMsg.php \n /e/member/msg/AddMsg/index.php \n 站内消息列表页面 \n /e/template/member/msg.php \n /e/member/msg/index.php \n 查看站内消息页面 \n /e/template/member/ViewMsg.php \n /e/member/msg/ViewMsg/index.php \n 好友页面 \n 增加好友页面 \n /e/template/member/AddFriend.php \n /e/member/friend/add/index.php \n 好友列表页面 \n /e/template/member/friend.php \n /e/member/friend/index.php \n 好友分类页面 \n /e/template/member/FriendClass.php \n /e/member/friend/FriendClass/index.php \n 选择好友页面 \n /e/template/member/ChangeFriend.php \n /e/member/friend/change/index.php \n 收藏夹页面 \n 增加收藏信息页面 \n /e/template/member/AddFava.php \n /e/member/fava/add/index.php \n 管理收藏页面 \n /e/template/member/fava.php \n /e/member/fava/index.php \n 管理收藏分类页面 \n /e/template/member/FavaClass.php \n /e/member/fava/FavaClass/index.php \n 会员空间 \n 选择会员空间风格页面 \n /e/template/member/mspace/ChangeStyle.php \n /e/member/mspace/ChangeStyle.php \n 设置会员空间页面 \n /e/template/member/mspace/SetSpace.php \n /e/member/mspace/SetSpace.php \n 管理会员空间反馈页面 \n /e/template/member/mspace/feedback.php \n /e/member/mspace/feedback.php \n 查看会员空间反馈页面 \n /e/template/member/mspace/ShowFeedback.php \n /e/member/mspace/ShowFeedback.php \n 管理会员空间留言页面 \n /e/template/member/mspace/gbook.php \n /e/member/mspace/gbook.php \n 回复会员空间留言页面 \n /e/template/member/mspace/ReGbook.php \n /e/member/mspace/ReGbook.php \n 会员登录绑定 \n 登录绑定管理页面 \n /e/template/memberconnect/ListBind.php \n /e/memberconnect/ListBind.php \n 绑定登录帐号页面 \n /e/template/memberconnect/tobind.php \n /e/memberconnect/tobind.php \n 会员其他页面 \n 充值记录页面 \n /e/template/member/buybak.php \n /e/member/buybak/index.php \n 下载记录页面 \n /e/template/member/downbak.php \n /e/member/downbak/index.php \n 购买会员类型页面 \n /e/template/member/buygroup.php \n /e/member/buygroup/index.php \n 点卡充值页面 \n /e/template/member/card.php \n /e/member/card/index.php \n 投稿 \n 管理投稿首页 \n /e/template/DoInfo/DoInfo.php \n /e/DoInfo/index.php \n 投稿选择栏目页 \n /e/template/DoInfo/ChangeClass.php \n /e/DoInfo/ChangeClass.php \n 发布投稿上传附件页面 \n /e/template/DoInfo/tran.php \n /e/DoInfo/tran.php \n 发布投稿页 \n /e/template/DoInfo/AddInfo.php \n /e/DoInfo/AddInfo.php \n 默认管理投稿列表页 \n /c/ecachemod/emodlist/1/qlistinfo.php \n /e/DoInfo/ListInfo.php \n 商城 \n 购物车页面 \n /e/template/ShopSys/buycar.php \n /e/ShopSys/buycar/index.php \n 提交订单页面 \n /e/template/ShopSys/order.php \n /e/ShopSys/order/index.php \n 确认提交订单页面 \n /e/template/ShopSys/SubmitOrder.php \n /e/ShopSys/SubmitOrder/index.php \n 订单列表页面 \n /e/template/ShopSys/ListDd.php \n /e/ShopSys/ListDd/index.php \n 订单详细页面 \n /e/template/ShopSys/ShowDd.php \n /e/ShopSys/ShowDd/index.php \n 购物车-加入表单模板 \n /e/template/ShopSys/buycar/buycar_form.php \n /e/ShopSys/buycar/index.php \n 购物车-确认订单模板 \n /e/template/ShopSys/buycar/buycar_order.php \n /e/ShopSys/SubmitOrder/index.php \n 购物车-显示订单模板 \n /e/template/ShopSys/buycar/buycar_showdd.php \n /e/ShopSys/ShowDd/index.php \n 增加配送地址页面 \n /e/template/ShopSys/AddAddress.php \n /e/ShopSys/address/AddAddress.php \n 管理配送地址页面 \n /e/template/ShopSys/ListAddress.php \n /e/ShopSys/address/ListAddress.php \n 其他 \n 提交错误报告页面 \n /e/template/public/report.php \n /e/public/report/index.php \n 在线支付页面 \n /e/template/payapi/payapi.php \n /e/payapi/index.php \n 信息投票页面 \n /e/template/public/vote.php \n /e/public/vote/index.php \n 投票插件页面 \n /e/template/tool/vote.php \n /e/tool/vote/index.php \n 信息权限提示页面 \n /e/template/public/checklevel/info1.php \n /e/action/ShowInfo.php 或 信息内容页面",
+   "links": [],
+   "content_len": 4571
+  }
+ }
+}

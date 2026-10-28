@@ -1,0 +1,409 @@
+{
+ "meta": {
+  "source": "http://www.phome.net/docs/cquestiondoc/",
+  "section": "cquestiondoc",
+  "title": "总览",
+  "version": "8.0",
+  "page_count": 8,
+  "categories": [
+   "常见问题大全",
+   "总览"
+  ],
+  "order": [
+   "quse",
+   "qinstall",
+   "qadminlogin",
+   "qinfo",
+   "qtemp",
+   "qmod",
+   "qcj",
+   "namesay"
+  ],
+  "schema": {
+   "pages": "map of page_id -> record",
+   "record.id": "page file id (without .html)",
+   "record.title": "page title",
+   "record.category": "manual section/category",
+   "record.content": "cleaned plain-text content (HTML tags stripped, entities decoded; code such as <?php preserved as readable text)",
+   "record.links": "external (non-phome.net/docs) links found in page",
+   "record.content_len": "character length of content"
+  }
+ },
+ "pages": {
+  "quse": {
+   "id": "quse",
+   "title": "帝国CMS使用常见问题",
+   "category": "总览",
+   "content": "帝国CMS使用常见问题 \n 帝国CMS使用常见问题 \n 使用相关常见问题 \n 1、帝国CMS系统之安全设置最优化 \n 可以查看安全设置手册： http://www.phome.net/docs/setsafedoc/page/setsafegood.html \n 2、新手入门可以看这个教程： \n 用帝国CMS建站如此简单－新手系列教程： http://www.phome.net/zx/empirecms/doc/782.html \n 3、后台管理地址是什么？ \n 8.0及以上版本是： /eadmin/admin/ \n 7.5及以下版本是： /e/admin/ \n 4、后台管理目录是否可以修改？ \n 8.0及以上版本后台管理目录 /eadmin/admin 可以任意重命名，如改为 /eadmin/MYadmin888 \n 7.5及以下版本后台管理目录 /e/admin 可以任意重命名，如改为 /e/MYadmin888 \n 并且重命名文件夹后不需要任何设置。 \n 5、数据库配置文件是哪个文件？ \n 7.0及以上版本数据库配置文件：/e/config/config.php \n 6.6及以下版本数据库配置文件：/e/class/config.php \n 6、访问前台页面，提示“xxx is close”说明该模块在后台被关闭，如何开启？ \n 答： 后台>系统>系统参数设置>基本属性：关闭前台模块相关功能，去掉对应模块的选择。 \n 7、帝国CMS模板是否通用？ \n 答： 帝国CMS所有版本模板通用。 (但用PHP8运行环境注意模板内容里的数组需加引号) \n 8、帝国CMS商业授权版独有功能介绍： \n 帝国CMS商业授权版独有功能介绍： http://www.phome.net/zx/empirecms/help/723.html \n 9、新手快速入门帝国CMS必看的两个教程： \n 新手快速入门帝国CMS必看的两个教程： http://www.phome.net/zx/empirecms/doc/189.html \n 10、帝国CMS零基础实例入门教程： \n 帝国CMS零基础实例入门教程： http://www.phome.net/zx/empirecms/doc/184.html \n 11、帝国CMS模板制作 一招鲜吃遍天教程： \n 帝国CMS模板制作 一招鲜吃遍天教程： http://www.phome.net/zx/empirecms/doc/187.html \n 12、多终端访问功能使用图文教程： \n 多终端访问功能使用图文教程： http://www.phome.net/zx/empirecms/doc/201.html \n 13、页面刷新生成中断 \n 有以下两种原因： \n(1)、模板的标签语法有问题，仔细检查下你模板的调用标签。 \n(2)、刷新超时，到系统设置－》系统参数设置那把每组刷新数改小。(再就是删除模板中影响生成速度的调用标签) \n 14、提示Cann’t connect to DB! 的原因 \n 答： 这是提示链接不上mysql/pgsql数据库。有以下原因： \n (1)、服务器mysq/pgsqll挂了，解决办法：重启服务器或重启mysql/pgsql解决； \n (2)、修改了数据库账号和密码，但没有修改数据库配置文件里的信息，解决办法：修改数据库配置文件里的数据库账号和密码为新的。（ 7.0及以上版本配置文件为/e/configconfig.php 、6.6及以下版本配置文件为/e/class/config.php） \n 15、默认是北京时间，如果修改时区？ \n 答： 可以修改配置文件“ /e/config/config.php ”里的“$ecms_config['sets']['timezone']='PRC';    //时区” \n 16、为什么发布时间比实际时间相差8个小时？ \n 你的php设置的时间有问题，是美国的时间。 \n以下方法可解决： \n修改php.ini，找到：date.timezone，把前面的分号去掉，并把值设为PRC \n 17、提示“Notice: Use of undefined constant”错误说明 \n php.ini配置问题，按下面修改即可解决： \n修改php.ini,把error_reporting = E_ALL改成 \nerror_reporting = E_ALL & ~E_NOTICE \n 18、用帝国CMS做英文站需要改什么？ \n (1)、修改 /e/data/langauge/gb/pub/ 目录下的q_message.php与fun.php语言包文件为英文。 \n(2)、前台调用用ecmsinfo万能标签或灵动标签。 \n 19、实现多国语言网站，怎么实现方便？ \n 答： 考虑用多访问端功能实现，一个语言一个访问端。 \n 20、备份数据库时出的问题 \n 错误内容：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1' at line 1\n 解决方法：到 系统参数设置>文件设置 那，把支持sql查询方式去掉 \n 21、备份整站需要备份什么数据? \n (1)、备份数据库； \n(2)、备份“d”附件目录； \n(3)、备份“e”动态页面模板相关目录； \n(4)、备份“c”缓存目录和“esavedatas”存文本文件目录；(8.0及以上版本) \n(5)、模板的图片和CSS目录。 \n 详细可查看备份网站教程： http://www.phome.net/doc/manual/admin/html/bakdata.html \n 22、更换服务器，网站如何迁移？ \n 详细可查看网站迁移教程： http://www.phome.net/doc/manual/admin/html/sitemove.html \n (7.0及以上版本数据库配置文件：/e/config/config.php) \n 23、数据更新中心各刷新的解析说明 \n 刷新首页 \n 生成首页 \n 刷新所有信息栏目页 \n 生成所有栏目页面 \n 刷新所有信息内容页 \n 生成所有信息内容页 \n 刷新所有信息JS调用 \n 生成所有信息JS调用文件 \n 批量更新动态页面 \n 生成控制面板模板、登录状态、登录JS等动态页面 \n 刷新所有标题分类页 \n 刷新所有标题分类页面 \n 刷新所有专题页 \n 刷新所有专题页面和专题子类页面 \n 批量刷新碎片文件 \n 生成所有碎片文件 (碎片采用文件调用形式时需要生成) \n 批量刷新投票JS \n 生成投票插件的JS调用文件 \n 批量刷新广告JS \n 生成广告插件的JS调用文件 \n 批量更新模型表单 \n 生成发布和投稿表单 (一般是网站搬家时使用) \n 批量更新反馈表单 \n 生成自定义反馈的表单 (一般是网站搬家时使用) \n 更新数据库缓存 \n 更新系统的缓存 (一般是网站搬家时使用) \n 恢复栏目目录 \n 重新建立栏目目录 (一般是网站搬家时使用) \n 删除栏目缓存文件 \n 重新更新“信息管理”菜单下的栏目列表及“栏目管理”菜单下的管理栏目页面。 (一般是网站搬家时使用) \n 更新栏目关系 \n 一般应用于修改栏目所属父栏目后使用此功能。 \n 更新栏目信息数 \n 重新统计栏目下信息数量，一般应用于批量删除信息后或直接在数据库删除信息后使用此功能。 \n 清除临时文件和数据 \n 清除临时和缓存文件，可清空产生的临时文件，还有就是更新动态页面模板时使用，用于实时更换模板 \n 自定义页面生成 \n 生成所有自定义页面/列表/JS操作。 \n 批量更新信息页地址 \n 当改变信息目录时，请用此功能来批量更新内容页地址。 \n 24、刷新页面提示错误 \n (1)、生成内容页提示“Table '*.phome_ecms_' doesn't exist......update ***_ecms_ set havehtml=1 where id='' limit 1”： \n原因：是你修改了栏目所属系统模型导致，因为栏目原来所属系统模型本身就有信息，而你改动了所属系统模型，使得这些信息无法找出所属栏目导致出错。 \n解决办法：修改栏目改回原来所属系统模型，然后进管理信息删除栏目所有的信息，最后再修改栏目改回所属新系统模型就可以解决。 \n(2)、列表提示“Parse error: syntax error, unexpected ' \n原因：你使用模板支持程序代码功能，但模板程序代码有问题所致，检查模板里的程序代码语法。 \n解决办法： 检查模板里的程序代码语法，将代码修改正确。 \n 25、不想显示后台的“商城”菜单，如何操作？ \n 答：后台>系统>系统参数设置>模型设置：“关闭后台菜单”项勾选“商城”即可。 \n 26、模板制作需要懂哪些内容？ \n 只需会使用Dreamweaver或其他网页编辑工具即可。 \n 27、栏目的页面显示模式说明： \n 封面式： 选择封面式后需选择封面模板。封面模板支持所有标签调用。 \n 列表式： 选择列表式后需选择列表模板。列表式为分页显示信息方式。 \n 页面内容式： 选择页面内容式后需填写“页面内容”。页面内容支持所有标签调用。 \n 栏目绑定信息： 选择栏目绑定信息后需设置“绑定信息ID”。设置后该栏目页面显示内容就是该信息页内容。 \n 28、帝国几个模板中的定义： \n 网站的构成 ，一般是这样： \n 1、首页 ，2、频道页 ，3、信息列表页 ，4、信息显示页 \n 可以理解成这几个对应的就是： \n 1、首页模板 ，2、封面模板 ，3、列表模板 ，4、内容模板\n 至于标签模板，是定义ecmsinfo等标签调用数据时候用什么格式来显示 \n 29、为什么生成后的页面都是空白内容？ \n 你的 /c/ecachetmp/ 目录权限有问题，将目录及目录里的文件权限设为777，然后再重新生成页面。(7.5及以下版本是　/e/data/tmp/ 目录) \n 30、为什么提示＂Fatal error: Unable to read *** bytes＂？ \n 请按\"二进制\"上传文件即可.(ftp软件传输时设置) \n 31、什么是远程保存忽略地址？ \n 在此列表里的网站/地址将不会将文件远程保存本地 \n 32、为什么页面不统计访问数呢？ \n 要统计页面访问数，需在模板加上“[!--page.stats--]”标签 \n 用户在模板那边选择是否增加此标签（如下载系统中一般不统计访问量，不加此标签就不会统计了） \n 如果你是用动态显示点击数的话，用这个即可：（显示＋统计） \n 33、是否重复刷新的说明 \n 生成信息后，系统会加上相应的标记，记录已刷新过。后台刷新数据可选择是否重复刷新 \n 34、全站域名更换说明 \n 如果系统参数设置的 网站地址 和 附件地址 没有加域名，则不需要操作，直接换域名就可以。 \n 如果系统参数设置的 网站地址 和 附件地址 加了域名，则要按下面操作： \n (1).设置好参数设置的选项． \n (2).替换相应的字段值： \n 方法一：比如执行SQL语句＂update phome_ecms_news set newstext=REPLACE(newstext,'原域名','新域名'),titlepic=REPLACE(titlepic,'原域名','新域名')＂（说明：news为相应的表） \n 方法二：后台批量替换字段值即可 \n 35、为什么验证码一直是ECMS？ \n 因为你的空间不支持GD库。(但不支持GD库不影响使用) \n 36、7.5及以上版本的多访问端切换注意事项： \n (1)、设置好各访问端目录权限，特别是/e/config/config.php、/e/data/这两个要有读写权限。 \n (2)、修改访问端设置后，要在主端更新各端数据库缓存才能生效：主访问端后台>系统>网站多访问端>管理网站访问端：“更新所有访问端缓存与动态页面”。 \n (3)、各访问端的COOKIE作用域要设置为：.域名，比如：.phome.net \n (4)、如果启用来源安全防护，提示切换成功后请等待2秒让自动转向访问端，不要手动点击转向链接，以防止触发来源安全验证显示空白。 \n 37、默认安装关闭PHP错误提示，如果要开启怎么设置？ \n 答： 如果要开启显示可以修改 /e/config/config.php 文件里的“$ecms_config['sets']['webdebug']=0;”参数(0为不显示、1为显示)。 \n 38、7.5版的编辑器默认会清除多余的word代码，如果要保留word格式怎么修改？ \n 答： CKeditor编辑器默认复制会清除多余word代码，如果要保留word格式可以按下面修改配置： \n 修改 /e/admin/ecmseditor/infoeditor/config.js(后台) 和 /e/data/ecmseditor/infoeditor/config.js(前台) 文件，找到： \n config.toolbar = 'full'; \n 在这行下面加： \n config.pasteFromWordRemoveFontStyles = false; \n config.pasteFromWordRemoveStyles = false; \n 然后保存文件，清空浏览器缓存再访问即可。 \n （注意事项：文件不能用记事本修改，否则会将文件转为GBK编码，推荐用Dreamweaver等编辑软件修改。） \n 39、为什么“更新专题”页面不显示专题？ \n 答： 因为“更新专题”页面是为没有管理专题权限的用户而设计的单独管理专题功能。管理员可以在增加专题时设置“可更新专题的用户”，这样即使没有管理专题权限，也可以在更新专题页面对专题进行管理与更新。授权更方便。 \n 40、为什么评论页的评分功能不能使用？ \n 答： 如果是要使用评分功能的模型，要往模型数据表增加“infopfen”（评分数）和“infopfennum”（评分人数）两个字段，详细操作步骤： \n 后台>系统>管理数据表>管理字段>增加字段： \n 评分数字段：字段名填“infopfen”、字段标识填“评分数”、字段类型选“大数值型(INT)”，其他默认，点提交； \n 评分人数字段：字段名填“infopfennum”、字段标识填“评分人数”、字段类型选“大数值型(INT)”，其他默认，点提交； \n 两个字段增加后模型即可使用评分功能。 \n 41、如果栏目的信息数显示不对，如何处理？ \n 答： 可以到后台>系统>数据更新>数据更新中心>更新栏目信息数。 \n 42、“信息处理结果反馈给会员”在哪儿设置？ \n 答： 修改信息就可以看到设置选项。 \n 43、刷新所有信息内容页面时提示“Table '*.phome_ecms_news_data_' doesn't exist” \n 答： 原因是数据本身有问题，信息索引表phome_ecms_表名_index有不存在ID的记录。解决办法：进数据库删除索引表中不存在的ID记录即可解决。 \n 44、会员空间在哪开启或关闭？ \n 答： 后台>系统>系统参数设置>用户设置：会员空间 选开启或关闭。(8.0及以上版本还要设置“可使用会员空间的权限组”) \n 45、如何设置注册时不用选择会员组？ \n 答： 改 /e/config/config.php 文件，把 \n $ecms_config['member']['changeregisterurl']=\"ChangeRegister.php\"; \n 改为 \n $ecms_config['member']['changeregisterurl']=\"\"; \n 保存文件即可。 \n 46、如何查看自己使用的CMS版本？ \n 答：可以看 /e/class/EmpireCMS_version.php 文件。 \n 47、提示“Duplicate entry '......' for key 'PRIMARY'” \n 进数据库修复对应的数据表解决。 \n 48、提示“Table 表名 is marked as crashed and should be repaired” \n 进数据库修复对应的数据表解决。 \n 49、帝国CMS建站的一般步骤 \n (1)、增加栏目； \n (2)、模板制作； \n (3)、录入信息； (终级栏目下可增加信息) \n (4)、生成前台页面。 \n 50、如何给附件目录绑定单独二级域名？ \n 给 /d/file/ 目录绑定二级域名， \n 系统参数设置附件地址改成二级域名地址， \n 然后用批量替换字段值功能替换附件地址为二级域名 (如果已经增加过信息的话) 。 \n 51、留言板如何设置验证码？ \n 系统参数设置开启留言板验证码，然后修改留言模板，留言表单加： \n 52、打通多个帝国CMS系统的会员整合与同步： \n 修改配置文件 /e/config/config.php 里的会员表名为同一个即可： \n $ecms_config['member']['tablename']=\" 数据库名.{$dbtbpre}enewsmember \"; //会员表 \n 如果要登录同步，还需要将 cookie作用域 和 前台cookie变量前缀 设置为同一个。 \n 详细可以看教程： http://www.phome.net/zx/empirecms/member/243.html \n 53、留言表单显示当前登录的用户名： \n 修改留言板模板，表单的名字变量加 value=\" \" \n 54、帝国CMS GBK版转UTF-8版方法： \n 转换可以看这个教程： http://www.phome.net/zx/empirecms/cdata/215.html (备份时记得不要选按十六进制备份) \n 55、计划任务功能使用教程： \n 功能解密之计划任务功能： http://www.phome.net/zx/empirecms/doc/158.html \n 56、自定义信息反馈表单的使用教程： \n 功能解密之自定义信息反馈表单： http://www.phome.net/zx/empirecms/doc/145.html \n 57、自定义系统扩展变量功能使用说明： \n 自定义系统扩展变量功能使用说明： http://www.phome.net/zx/empirecms/doc/697.html \n 58、帝国CMS在大数据量下优化说明： \n 帝国CMS在大数据量下优化说明： http://www.phome.net/zx/empirecms/doc/695.html \n 59、帝国CMS网站大数据优化方案功能使用说明： \n 帝国CMS网站大数据优化方案功能使用说明： http://www.phome.net/zx/empirecms/doc/694.html \n 60、帝国CMS8.0版－数据字典： \n 帝国CMS8.0版－数据字典： http://www.phome.net/docs/dbdoc/dbdoc80/ \n 61、帝国网站管理系统功能解密 系列教程 \n 帝国网站管理系统功能解密 系列： http://www.phome.net/zx/empirecms/doc/188.html \n 62、如何设置不限邮箱注册？ \n 答：后台>系统>系统参数设置>用户设置：把“一个邮箱可注册:”设置为0 \n 63、如何设置不限手册号码注册？ \n 答：后台>系统>系统参数设置>用户设置：把“一个手机号可注册:”设置为0 \n 64、会员实名认证接口如何整合？ \n 可以看这个说明： http://www.phome.net/zx/pup/250.html",
+   "links": [
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/782.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/782.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/help/723.html",
+     "href": "http://www.phome.net/zx/empirecms/help/723.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/189.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/189.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/184.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/184.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/187.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/187.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/201.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/201.html"
+    },
+    {
+     "text": "http://www.phome.net/doc/manual/admin/html/bakdata.html",
+     "href": "http://www.phome.net/doc/manual/admin/html/bakdata.html"
+    },
+    {
+     "text": "http://www.phome.net/doc/manual/admin/html/sitemove.html",
+     "href": "http://www.phome.net/doc/manual/admin/html/sitemove.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/member/243.html",
+     "href": "http://www.phome.net/zx/empirecms/member/243.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/cdata/215.html",
+     "href": "http://www.phome.net/zx/empirecms/cdata/215.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/158.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/158.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/145.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/145.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/697.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/697.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/695.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/695.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/694.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/694.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/188.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/188.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/pup/250.html",
+     "href": "http://www.phome.net/zx/pup/250.html"
+    }
+   ],
+   "content_len": 8248
+  },
+  "qinstall": {
+   "id": "qinstall",
+   "title": "帝国CMS安装常见问题",
+   "category": "常见问题大全",
+   "content": "帝国CMS安装常见问题 \n 帝国CMS安装常见问题 \n 安装相关常见问题 \n 运行环境相关 \n 1、安装和使用帝国CMS8.0版需要什么运行环境？ \n 答： PHP4.2.3版本以上、数据库版本不限、操作系统不限、WEB服务器软件不限。 所以无论您是用20多年前的运行环境，还是用最新版的运行环境，都可以安装使用。 \n 2、使用帝国CMS8.0版需要联网吗？ \n 答： 不需要。不需要联网系统也不会主动联网，断网使用都不带“转圈”的。 \n 3、帝国CMS8.0版支持的数据库有哪些？ \n 答： 帝国CMS8.0版在原来版本支持MySQL、MariaDB、其它MySQL内核的数据库基础上，还新增支持PostgreSQL、国产华为高斯(openGauss)、国产金仓数据库(kingbase)、国产瀚高数据库、其它PostgreSQL内核的数据库。 \n 4、帝国CMS8.0版是否支持国产操作系统和中间件？ \n 答： 支持。操作系统不限、WEB服务器软件不限，只需支持PHP就可以。 \n 5、帝国CMS8.0版是否支持国产数据库？ \n 答： 支持MySQL内核和PostgreSQL内核的国产数据库。国产数据库推荐使用“国产金仓数据库(kingbase)”和“国产瀚高数据库”，因为有现成的使用案例，确认直接安装就能用、不需要特别配置。 \n 6、如何测试使用的国产数据库是否支持？ \n 测试是否支持国产数据库的代码 可查看： http://www.phome.net/zx/empirecms/doc/770.html \n 安装时相关 \n 7、帝国CMS系统安装图文教程 \n 可查看： http://www.phome.net/docs/xsjc/install/ \n 8、安装界面不能正常显示 \n 运行环境有问题，使用记事本打开PHP配置文件php.ini： 设置short_open_tag = On \n然后重启apache或iis设置才能生效。 \n 9、安装时出现如下提示 \n “建立数据表: phome_ecms_article 完毕...... \nYou have an error in your SQL syntax. Check the manual that corresponds to your MySQL server version for the right syntax to use near 'DEFAULT CHARSET=gbk' at line 1”\n 说明：因为您空间使用的是MySQL4.0，进行安装配置数据库时，MySQL版本选择为“MySQL4.0”即可解决。 \n 10、帝国CMS一定要安装在网站根目录吗？可以安装在二级目录中吗？ \n 答： 都可以。 \n 11、设置数据库配置信息后提交空白 \n 使用 PHP8以上环境 或者 使用PostgreSQL 必须填写已建好的数据库名。 \n 12、选择对应的数据库类型列表里没有，怎么办？ \n 如果数据库类型列表里没有的，可以选择“其它MySQL‌内核的数据库”或“其它PostgreSQL‌内核的数据库”。 \n比如：“国产瀚高数据库”选择“其它PostgreSQL‌内核的数据库”就可以安装成功。 \n国产数据库推荐使用“国产金仓数据库(kingbase)”和“国产瀚高数据库”，因为有现成的使用案例，确认直接安装就能用、不需要特别配置。 \n 13、不知道数据库链接信息，怎么办？ \n 若不清楚数据库服务器地址，用户名，密码，数据库名可向空间提供商咨询。该信息由空间商在服务器上分配的。 \n 14、后台管理地址是什么？ \n 8.0及以上版本是： /eadmin/admin/ \n7.5及以下版本是： /e/admin/ \n 15、后台管理目录是否可以修改？ \n 8.0及以上版本后台管理目录 /eadmin/admin 可以任意重命名，如改为 /eadmin/MYadmin888 \n7.5及以下版本后台管理目录 /e/admin 可以任意重命名，如改为 /e/MYadmin888 \n并且重命名文件夹后不需要任何设置。 \n 16、数据库配置文件是哪个文件？ \n 7.0及以上版本数据库配置文件：/e/config/config.php \n6.6及以下版本数据库配置文件：/e/class/config.php \n 17、附件上传“d”目录是否需要脚本执行权限？ \n 答：“d”附件目录不需要脚本执行权限。 \n 一键安装包相关 \n 18、什么是“一键安装包”？ \n 答： 当本地没有测试运行环境时，可一键安装运行环境。 \n 19、一键安装包安装目录： \n 答： 要将安装包的“EmpireServer”目录复制到D盘根目录。 (D:\\EmpireServer目录名不可更改) \n 20、为什么“一键安装.bat”不成功呢？ \n 答： 用windows7及以上则需要鼠标右键以管理员身份运行才能成功。 \n (再就是可能80端口被占用) \n 21、如何用一键安装包安装帝国CMS8.0或其他程序？ \n 答： 只需将程序复制到“D:/EmpireServer/web/”目录安装即可。 \n 22、一键安装包修改mysql密码的问题 \n 答： 修改数据库密码后需重启mysql才能生效； \n 还有修改数据库密码后，phpmyadmin的配置文件也要修改，具体如下： \n 修改 /phpmyadmin/libraries/config.default.php 文件里的： \n $cfg['Servers'][$i]['password']      = '设置的密码'; \n 与修改帝国CMS的数据库配置文件：/e/config/config.php",
+   "links": [
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/770.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/770.html"
+    }
+   ],
+   "content_len": 2365
+  },
+  "qadminlogin": {
+   "id": "qadminlogin",
+   "title": "帝国CMS后台登录常见问题",
+   "category": "常见问题大全",
+   "content": "帝国CMS后台登录常见问题 \n 帝国CMS后台登录常见问题 \n 后台登录常见问题 \n 1、后台管理地址是什么？ \n 8.0及以上版本是： /eadmin/admin/ \n 7.5及以下版本是： /e/admin/ \n 2、后台管理目录是否可以修改？ \n 8.0及以上版本后台管理目录 /eadmin/admin 可以任意重命名，如改为 /eadmin/MYadmin888 \n 7.5及以下版本后台管理目录 /e/admin 可以任意重命名，如改为 /e/MYadmin888 \n 并且重命名文件夹后不需要任何设置。 \n 3、忘记后台管理员账号怎么办？ \n 用phpmyadmin查看phome_enewsuser表里的记录：查看username或tuser字段的内容. \n 4、忘记后台登录密码怎么办？ \n 7.2及以上版本： 用phpmyadmin修改phome_enewsuser表里的记录：把password字段的内容改为：“a024187abaf1c7a6392128a90493e99b”；把salt字段的内容改为：“empire”；把salt2字段的内容改为：“empirecms”. \n密码就是：123456 \n 5.1至7.0版本： 用phpmyadmin修改phome_enewsuser表里的记录：把password字段的值设为：“322d3fef02fc39251436cb4522d29a71”；把salt字段的值设为：“abc”. \n密码就是：123456 \n 5.0及以前版本： 用phpmyadmin修改phome_enewsuser表，把password字段的值设为：e10adc3949ba59abbe56e057f20f883e \n密码就是：123456 \n 5、忘记后台登录认证码怎么办？ \n 7.0及以上版本： 查看 /e/config/config.php 文件里的“$ecms_config['esafe']['loginauth']”变量内容。 \n 6.6及以下版本： 查看 / e/class/config.php 文件里的“$do_loginauth”变量内容。 \n 6、忘记后台登录安全答案怎么办？ \n 用phpmyadmin修改phome_enewsuseradd表里的记录：把“equestion”字段的内容改为0；把eanswer字段的内容改为空. \n修改后登录时则不需要安全答案，可以登录后再修改安全答案。 \n 7、后台设置IP限制后，将自己的IP都限制了，如何处理？ \n 可以修改 /e/config/config.php 里的缓存，把你这个ip去掉（closeip、openip、hopenip），然后登录后台重新设置。 \n (不建议用记事本编辑，有可能将UTF8编码文件转换为GBK) \n 8、登录后台提示“登录成功”，接着又提示“您还未登录” \n 8.0及以上版本： /c/ecacheadmin/eadminlogin 目录权限不可写导致，请将此目录权限设置为777权限即可解决。 \n 7.5及以下版本： /e/data/adminlogin 目录权限不可写导致，请将此目录权限设置为777权限即可解决。 \n 9、数据库配置文件是哪个文件？ \n 7.0及以上版本数据库配置文件：/e/config/config.php \n 6.6及以下版本数据库配置文件：/e/class/config.php \n 10、如果是设置安全参数将自己限制了，怎么还原修改？ \n 可修改 /e/config/config.php 配置文件里的对应参数内容。 \n 11、后台登录认证码和验证码的区别 \n (1)、认证码是安装时初始化管理员账号设置的验证信息，用于内部人员验证。 \n(2)、验证码是防灌水机重复提交时使用。 \n 12、为什么验证码均显示为“ecms”？ \n 因为空间不支持GD库，所以验证码均为“ecms”。但不支持GD库不影响使用。 \n 13、后台登录无法显示验证码 \n 检查是不是最近用记事本修改过文件，导致将UTF8编码文件转换为GBK，可将修改过的文件内容转回UTF8编码。 \n 14、登录时提示“Duplicate entry '......' for key 'PRIMARY'” \n 进数据库修复对应的数据表解决。 \n 15、登录时提示“请用安全证书登录后台” \n 因为您的账号绑定了证书。设置绑定证书后必须通过证书页面进入才可登录网站后台。 \n 16、采用客户端加密验证的注意事项： \n 客户端的时间不能比服务器端时间快。 \n 17、后台登录超过错误限制次数后，如果想马上登录怎么操作？ \n 可以修改 /e/config/config.php 里的缓存，搜索“'loginnum'=>”，修改限制次数，然后登录后台重新设置。(后台>系统>系统参数设置>用户设置)。 \n (不建议用记事本编辑，有可能将UTF8编码文件转换为GBK) \n 18、不小心把后台登录超时时间改为0，进不了后台，怎么办？ \n 可以修改 /e/config/config.php 里的缓存，搜索“'exittime'=>”，修改超时时间，然后登录后台重新设置。(后台>系统>系统参数设置>用户设置)。 \n (不建议用记事本编辑，有可能将UTF8编码文件转换为GBK) \n 19、后台登录时填完用户密码后点提交显示空白，是什么原因？ \n 可以试着先修改 /e/config/config.php 里的“$ecms_config['esafe']['ckfromurl']= 2 ;”，将值“ 2 ”修改为“ 0 ”。 \n 如果还一样是空白那就要检查服务器运行环境配置。 \n (不建议用记事本编辑，有可能将UTF8编码文件转换为GBK)",
+   "links": [],
+   "content_len": 2391
+  },
+  "qinfo": {
+   "id": "qinfo",
+   "title": "帝国CMS信息相关常见问题",
+   "category": "常见问题大全",
+   "content": "帝国CMS信息相关常见问题 \n 帝国CMS信息相关常见问题 \n 信息相关常见问题 \n 1、如何增加信息？ \n 答： 先增加栏目，然后再增加信息（终级栏目下方可增加信息）。 \n 详细可以看新手教程： http://www.phome.net/zx/empirecms/doc/782.html \n 2、后台增加信息后如何将信息更新到前台页面？ \n 有两种情况： \n (1)、如果栏目属性里设置增加信息自动生成列表，则增加信息后立即会更新到前台，不需要多余操作。 \n (2)、如果栏目属性里没有设置增加信息自动生成相关列表，那么点击“\n 生成当前栏目 \n 生成首页 \n 生成父栏目 \n 生成当前栏目与父栏目 \n 生成父栏目与首页 \n 生成当前栏目、父栏目与首页 \n ”这里的提交也可以将信息更新到前台页面。 \n 详细可以看教程： http://www.phome.net/zx/empirecms/doc/776.html \n 3、投稿功能在哪开启或关闭？ \n 答： 后台>系统>系统参数设置>用户设置：投稿功能 选开启或关闭。 \n 各栏目是否开启投稿：修改栏目>栏目选项：开启前台投稿。 \n 4、前台管理信息左侧导航：前台投稿如何不显示不想开放投稿的系统模型 \n 方法一、 到“系统设置”－》“数据表管理”－》“管理系统模型”－》修改系统模型－》设置不显示到前台导航 \n 方法二、 到“系统设置”－》“数据表管理”－》“管理系统模型”－》修改系统模型，将所有投稿项打勾去掉，这样前台投稿就不会显示. \n 如果要修改名称，只需修改系统模型的别名. \n 5、信息分类模型的区域修改 \n (1)、提交信息选择地区修改：系统设置－》数据表管理－》管理字段－》修改myarea字段的初始值 . \n (2)、模板导航地区修改：模板管理－》公共模板变量－》管理模板变量－》修改“分类信息区域导航”变量 . \n 6、如何修改字段中的选项？ \n 系统设置－》数据表管理－》管理字段－》修改相应字段的初始值。 \n (如下载系统模型的\"软件类型\"选项) \n 7、前台显示字段内容不想自动回车换行 \n 可以直接修改字段选项（系统设置－》数据表管理－》管理字段），将回车替换成换行符选项去掉即可 . \n 8、相关链接的依据是？ \n 通过标题是否包括”关键字”来查询，也可设置相同关键字也关联，可以到参数设置那设置 \n 9、为什么信息管理的”信息栏目”列表不变？ \n 缓存问题，解决方法如下：（/c/ecachepub/eclassfc/目录权限要为777，否则系统不能更新缓存） \n (1)、设置 /c/ecachepub/eclassfc/ 目录及目录下文件权限为777权限； (7.5及以下版本为 /e/data/fc/ 目录) \n (2)、后台->”系统”->”数据更新”->”数据更新中心”->”删除栏目缓存文件”即可解决。 \n 10、如何给栏目绑定域名？ \n 步骤： \n (1)、域名控制面板里设置解析到服务器IP； \n (2)、服务器里设置绑定域名到栏目目录(apache/iis里设置)； \n (3)、修改栏目填写绑定的域名地址(父栏目要勾选绑定域名应用于子栏目)，绑定地址比如：http://news.phome.net； \n (4)、如果栏目下已发布过信息、并且是7.0及以上版本，需重新更新信息页地址（系统>数据更新>更新信息页地址） \n (5、重新生成所有页面； \n (6)、绑定完毕。 \n 11、更换了栏目目录地址，为什么信息页地址不更新？ \n 答：因为7.0及以上版本直接将地址存在数据库里，所以更换目录规则后，需到：后台>系统>数据更新>更新信息页地址：更新数据表中的内容页地址。(注意：看左侧菜单，非“数据更新中心”页面里) \n 12、如何给信息新增浏览数和下载数的年、半年、季度、月、周、今日、昨天统计？ \n 答： 给对应系统模型表增加对应字段名的字段即可，详细可以看这个说明： http://www.phome.net/zx/pup/734.html \n 13、前台投稿后、提交反馈后、提交留言后 如何指定返回页面？ \n 答： 表单加 即可。 \n 如果“返回地址”为“9”时则返回提交表单页面；如果为地址则为返回指定地址。 \n 14、移动栏目信息的时候发现找不到目标栏目？ \n 答： 缓存问题，可以到：后台->”系统”->”数据更新”->”数据更新中心”->”删除栏目缓存文件”即可解决。 \n 15、投稿页面不显示投稿栏目列表的原因 \n 检查栏目是否开启投稿，父子栏目都要检查是否开启。 \n 然后到：后台->”系统”->”数据更新”->”数据更新中心”->”批量更新模型表单(记得勾选更新栏目导航)”即可解决。 \n 16、查询信息索引表有记录、但主表没记录的SQL语句： \n select * from phome_ecms_表名_index  where id not in (select id from phome_ecms_表名) \n 17、多值字段修改为 可以上传图片的形式方法： \n 可以修改字段的HTML代码 加选择图片链接： (即通过改变ID名来实现) \n id=\"ffff_1_ \" value=\"\"> &infoid= &filepass= &sinfo=1&doing=1&field= ffff_1_ ','','width=700,height=550,scrollbars=yes');\" title=\"选择已上传的图片\"> \n 18、怎么实现信息按A,B,C,D这样字母检索呢？ \n 系统模型表增加infozm字段，这个字段会自动取标题拼音第一个字母； \n 然后再增加26个字母自定义列表生成导航页； \n 还有一种就是用结合项做导航。 \n 19、将信息转给某个前台会员所有： \n 执行SQL： \n update phome_ecms_表 set userid=会员ID,username='会员用户名',ismember=1 where id in (信息ID1,ID2...,IDn); \n 20、将某个管理员的信息转给某个前台会员所有： \n 执行SQL： \n update phome_ecms_表 set userid=会员ID,username='会员用户名',ismember=1 where userid=管理员用户ID and ismember=0; \n 21、如何在前台会员投稿时记录发布者IP？ \n 答： 系统模型表增加字段名为“infoip”的字段，类型用varchar(50)。然后修改系统模型选择字段为投稿项、可增加、可修改。 \n 22、如何设置投稿发布成功后返回内容页？ \n 答： 把 、 加到系统模型投稿表单模板（后台>系统设置>数据表管理>管理系统模型>修改） \n 23、如何在投稿发布表单页显示当前会员的信息？ \n 答： 可以用 \n 24、帝国CMS工作流使用说明： \n 帝国CMS工作流使用说明： http://www.phome.net/zx/empirecms/doc/696.html \n 25、如何启用字段内容存文本？ \n 默认系统模型： 用 文章系统模型 内容就是存文本的。 \n 自定义系统模型： 增加字段时可以选择为“内容存文本”字段。 \n 26、分配栏目管理权限设置教程： \n 分配栏目管理权限设置教程： http://www.phome.net/zx/empirecms/doc/234.html (不同管理员管理不同栏目下的信息) \n 27、系统模型之间的字段关联教程： \n 功能解密之模型之间的字段关联： http://www.phome.net/zx/empirecms/doc/157.html \n 28、字段内容存文本使用教程： \n 功能解密之内容存文本： http://www.phome.net/zx/empirecms/doc/146.html \n 29、信息DIGG顶与踩的使用教程： \n 功能解密之DIGG的实现： http://www.phome.net/zx/empirecms/doc/153.html \n 30、多条件搜索表单制作说明： \n 功能解密之多条件搜索： http://www.phome.net/zx/empirecms/doc/155.html \n 31、结合项使用教程： \n 功能解密之结合项功能： http://www.phome.net/zx/empirecms/doc/165.html \n 32、专题自定义字段使用说明： \n 专题自定义字段使用说明： http://www.phome.net/zx/empirecms/doc/699.html \n 33、栏目自定义字段使用说明： \n 栏目自定义字段使用说明： http://www.phome.net/zx/empirecms/doc/698.html \n 34、评论自定义字段使用说明： \n 功能解密之评论自定义字段： http://www.phome.net/zx/empirecms/doc/172.html \n 35、父子信息功能使用教程： \n 帝国CMS8.0版功能解密之：父子信息功能使用： http://www.phome.net/zx/empirecms/doc/769.html \n 36、前台TAGS页面语法说明： \n 前台TAGS页面语法说明： http://www.phome.net/zx/empirecms/temp/705.html \n 37、帝国CMS新手教程之：增加栏目 \n 帝国CMS新手教程之：增加栏目： http://www.phome.net/zx/empirecms/doc/775.html \n 38、帝国CMS新手教程之：增加信息 \n 帝国CMS新手教程之：增加信息： http://www.phome.net/zx/empirecms/doc/776.html \n 39、帝国CMS新手教程之：栏目单页模式 \n 帝国CMS新手教程之：栏目单页模式： http://www.phome.net/zx/empirecms/doc/779.html \n 40、帝国CMS新手教程之：用自定义页面实现单页 \n 帝国CMS新手教程之：用自定义页面实现单页： http://www.phome.net/zx/empirecms/doc/780.html \n 41、帝国CMS新手教程之：父栏目采用列表模式 \n 帝国CMS新手教程之：父栏目采用列表模式： http://www.phome.net/zx/empirecms/doc/781.html \n 42、导入一条信息需要写入哪几个表？ \n 答： 3个表。先写入信息索引表“ phome_ecms_表名_index ”，并获得信息ID， \n 然后写入信息主表“ phome_ecms_表名 ”和信息副表“ phome_ecms_表名_data_1 ”， \n 最后栏目表( enewsclass )的 allinfos 总信息数 和 infos 已审核信息数 字段值+1 (也可以全部导入后，再到数据更新中心>更新栏目信息数) \n 表字段说明可以看数据字典： http://www.phome.net/docs/dbdoc/dbdoc80/",
+   "links": [
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/782.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/782.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/776.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/776.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/pup/734.html",
+     "href": "http://www.phome.net/zx/pup/734.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/696.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/696.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/234.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/234.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/157.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/157.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/146.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/146.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/153.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/153.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/155.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/155.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/165.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/165.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/699.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/699.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/698.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/698.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/172.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/172.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/769.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/769.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/temp/705.html",
+     "href": "http://www.phome.net/zx/empirecms/temp/705.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/775.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/775.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/779.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/779.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/780.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/780.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/781.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/781.html"
+    }
+   ],
+   "content_len": 4659
+  },
+  "qtemp": {
+   "id": "qtemp",
+   "title": "帝国CMS模板相关常见问题",
+   "category": "常见问题大全",
+   "content": "帝国CMS模板相关常见问题 \n 帝国CMS模板相关常见问题 \n 模板相关常见问题 \n 1、模板制作需要懂哪些内容？ \n 只需会使用Dreamweaver或其他网页编辑工具即可。 \n 2、帝国几个模板中的定义： \n 网站的构成 ，一般是这样： \n 1、首页 ，2、频道页 ，3、信息列表页 ，4、信息显示页 \n 可以理解成这几个对应的就是： \n 1、首页模板 ，2、封面模板 ，3、列表模板 ，4、内容模板\n 至于标签模板，是定义ecmsinfo等标签调用数据时候用什么格式来显示 \n 3、栏目的页面显示模式说明： \n 封面式： 选择封面式后需选择封面模板。封面模板支持所有标签调用。 \n 列表式： 选择列表式后需选择列表模板。列表式为分页显示信息方式。 \n 页面内容式： 选择页面内容式后需填写“页面内容”。页面内容支持所有标签调用。 \n 栏目绑定信息： 选择栏目绑定信息后需设置“绑定信息ID”。设置后该栏目页面显示内容就是该信息页内容。 \n 4、标签模板与模板标签的区别： \n 标签模板： 是为ecmsinfo标签服务，用于制作显示样式 \n 模板标签： 如[ecmsinfo]，[phomenews]等都是模板标签 \n 5、修改错模板内容，是否可以还原？ \n 答： 可以，修改模板页面“提交”按钮旁边有个“ [修改记录] ”链接可还原修改内容。 \n 6、修改模板内容的备份份数在哪设置？ \n 答： 默认为备份模板最近3次修改记录，要设置更多可以到：后台>系统>系统参数设置>信息设置>模板备份记录数 \n 在每个模板下面的“[修改记录]”链接，可以还原修改记录。 \n 7、在哪修改[!--temp.*--]的模板内容？ \n 这个公共模板变量，这里修改：后台>模板>公共模板变量>管理模板变量>修改模板变量 \n 8、帝国CMS模板的PHP扩展变量说明 \n (1)、列表/封面/内容模板变量说明： \n 当前栏目id：$GLOBALS['navclassid'] \n 通过这个变量可以输出这个栏目id的所有数据（如：select * from phome_enewsclass where classid='\".$GLOBALS['navclassid'].\"'） \n (2)、内容模板变量说明： \n 字段值数组：$navinfor \n 调用方法：$navinfor['字段名']，比如要显示＂信息ID字段＂，那在模板里用： 即可输出 \n (3)、列表模板list.var模板变量说明： \n 字段值数组：$r \n 调用方法：$r['字段名'] \n 可以参考使用范例： http://www.phome.net/zx/empirecms/doc/708.html (PHP8下数组需加引号) \n 9、标签参数支持PHP变量的使用 \n 答： 模板中可以将PHP变量作为标签参数直接使用。 \n 例如：我们要列出所有信息来源相同的10条信息，标签如下(按sql语句调用、befrom字段放在主表)： \n [phomenews]\"select * from phome_ecms_news where befrom='\".$navinfor['befrom'].\"' order by id desc limit 10\",10,32,0,24,0[/phomenews] \n 附加说明：上面使用的内容模板PHP变量：$navinfor['字段名'] \n 10、为什么[!--writer--]不能在列表中调用？ \n 默认新闻模型把writer和befrom字段存放在副表，要在列表中调用要先把这两个字段转移到主表(管理字段页面点副表转移)，转移后修改模型选择这两个字段为列表模板项就可以用[!--字段名--]调用。 \n另外，也可以用下面第11条调用副表字段方法调用 \n 11、如何在列表模板或标签模板中调用副表字段内容? \n 列表模板中要调用副表字段内容需要采用“list.var支持程序代码”。下面以读取新闻副表中的newstext字段为例的list.var模板代码： \n $fr=$empire->fetch1(\"select newstext from {$dbtbpre}ecms_news_data_{$r['stb']} where id='\".$r['id'].\"'\"); \n $listtemp=' [!--title--] 副表内容字段：'.$fr['newstext'].' '; \n 12、如何用灵动标签调用副表字段内容? \n 原理：在灵动标签循环内用SQL读取副表内容。下面以读取新闻副表中的newstext字段为例： \n [e:loop={0,1,3,0}] \n $fr=$empire->fetch1(\"select newstext from {$dbtbpre}ecms_news_data_{$bqr['stb']} where id='\".$bqr['id'].\"'\"); \n ?> \n 标题： \n 副表内容字段： \n [/e:loop] \n 13、如何修改提示信息页面的样式？ \n 可修改 /e/message/index.php 文件 \n 14、如何修改输入访问密码页面的样式？ \n 可修改 /e/message/viewpasspage.php 文件 \n 15、如何调用指定某一条信息的内容? \n 标签附加SQL条件参数设置： 'id=信息ID' 即可。 \n 以ecmsinfo标签为例: \n [ecmsinfo]0,10,30,0,3,7,0, 'id=5' [/ecmsinfo] \n 16、标签调用记录范围小技巧 \n 例如：只调用从第10条开始的后20条记录 \n 我们可以把显示条数改为： '10,20' ，以万能标签为例子(当然所有标签都一样)： \n [ecmsinfo]栏目ID/标题分类ID, '10,20' ,标题截取数,是否显示栏目名,操作类型,模板ID,只显示有标题图片[/ecmsinfo] \n 17、本月热点排行的sql条件调用 \n 只需设置标签“ 附加SQL条件 ”参数为： 'newstime>UNIX_TIMESTAMP()-86400*30' \n 以ecmsinfo标签为例: \n [ecmsinfo]0,10,30,0,4,7,0, 'newstime>UNIX_TIMESTAMP()-86400*30' [/ecmsinfo] \n 30是指30天。 \n 18、下载系统模型的下载不采用弹出窗口式说明 \n 如果不采用弹出式下载的话，可依以下步骤完成： \n (1)、修改下载地址模板（＂公共模板＂ －＞ ＂修改下载地址模板＂）： \n 将： \n [ [!--down.name--] ] \n 改成： \n [ [!--down.name--] ] \n (2)、开启直接下载开关： \n 后台－》参数设置－》模型设置：“开启直接下载” \n (3)、重新刷新下载表的页面即可（记得选择刷新全部） \n 此方案缺点：起不到防盗链作用，如果你服务器本身就有防盗效果，才推荐使用此方式． \n 19、开启模板支持程序代码说明 \n (1)、开启：参数设置－》信息设置 \n (2)、这样直接在模板加上php代码就会受系统编译了。如果不想被编译，把程序代码直接加到页面里面： \n \" \"表示 \n \">\"用\" \"表示 \n 例如： \n 那加到模板代码就是： ? echo\"Hello!\";? \n 20、文章内容加环饶广告 \n [phomead]广告ID[/phomead] \n 21、在内容页面直接显示评论 \n 方法一： \n 内容模板增加评论JS调用： \n 其中10为调用评论数量，显示样式修改：后台－》模板管理－》公共模板－》修改“评论JS调用模板”。 \n 方法二： \n 安装“内容页评论AJAX分页显示”插件： http://www.phome.net/zx/empirecms/tool/717.html \n 22、用帝国CMS做英文站需要改什么? \n (1)、修改e/data/langauge/gb/pub/目录下的q_message.php与fun.php语言包文件为英文； \n (2)、前台调用用ecmsinfo万能标签或灵动标签。 \n 23、比较高效的随机调用方法 \n 比较高效的随机调用方法： http://www.phome.net/zx/empirecms/use/218.html \n 24、如何调用各级头条和推荐? \n “二级头条”调用：标签附加SQL条件参数设置为：'firsttitle=2' \n “四级推荐”调用：标签附加SQL条件参数设置为：'isgood=4' \n 25、控制面板“[!--empirenews.template--]”样式修改？ \n 如果只是改表格颜色，修改模板的css样式文件里的下面定义样式：（如默认模板里的 /skin/default/css/style.css ） \n.header { } \n.header a { } \n.tableborder { } \n如果要修改整体框架可改相应的模板文件即可，如控制面板首页：/e/template/member/cp.php \n 26、为什么生成后的页面都是空白内容？ \n 您的 /c/ecachetmp/ 目录权限有问题，将目录及目录里的文件权限设为777，然后再重新生成页面。(7.5及以下版本是　/e/data/tmp/ 目录) \n 27、动态页面头部 和页面头部的区别是什么？ \n 一个用于动态页面，一个用于静态页面。修改头部时两个都要修改 \n 28、为什么修改了栏目的”内容模板”以前的信息页面不变？ \n 解决方法如下三种： \n (1)、修改栏目的＂内容模板＂时，选择应用于已生成的文件； \n (2)、用批量替换值功能：将newstempid字段值替换一下(旧值为旧的模板id，新值为新的内容模板id，并且要选择完全替换)； \n (3)、运行SQL：\"update phome_ecms_表名 set newstempid=旧的模板id where newstempid=新的模板id\"(＂news＂为相应的数据表) \n 29、动态页面不能解析模板标签 \n 考虑到资源占用问题，目前版本动态页面不支持标签调用，动态页面建议用JS调用。 \n 30、修改模板后，动态列表页和内容页为什么不更新修改后的模板？ \n 答： 因为默认安装，系统设置了动态页面缓存时间，修改模板后要到数据更新中心“清除临时文件和数据”后才能马上更新。 \n如果你是本地调试模板可以到系统设置>参数设置：“信息设置”里修改缓存时间为0，这样则是实时更新。 \n 31、模板内容中有“\\”如何处理? \n 单个\\用四个\\表示即可，如：“\\r”用“\\\\\\\\r”表示即可。 \n 也可以用转义字符函数egetzy()来显示。 \n 32、点击区域链接为什么中文会变成乱码 \n 这个是在iis下目录名不加/才会出现的情况，解决方法：修改区域链接，在ListInfo后加上\"/\"即可解决，如：ListInfo/?classid=... \n 33、为什么页面不统计访问数呢？ \n 要统计页面访问率，需在内容模板底部加上“[!--page.stats--]”变量 \n用户在模板那边选择是否增加此标签（如下载系统中一般不统计访问量，不加此标签就不会统计了）\n 如果你是用动态显示点击数的话，用这个即可：（显示＋统计） \n 34、7.0以上版本与以往版本的模板是否通用？ \n 答： 模板依然是所有版本通用。但7.0版本有几个细节做改变： \n(1)、7.0以上版本不再支持一些过期的标签调用：phomeautopic、phomenewstext、phomeshowclass、phomeshowmap、phomepic、phomemorepic。 \n(2)、评论、会员、商城表单提交地址由原来的“/e/enews/index.php”分别改为“/e/pl/doaction.php”、“/e/member/doaction.php”、“/e/ShopSys/doaction.php”。 \n(3)、调用专题的信息要改用“索引灵动标签”调用。 \n(4)、其它全部一样。 \n 35、7.5及以上版本的点击显示验证码如何调用？ \n (1)、显示页面要加载 /e/data/js/ajax.js 文件，即加： \n (2)、显示验证码用： 点击显示验证码 \n 比如注册页： 点击显示验证码 \n (3)、验证码超时时间在“后台>系统>系统参数设置”里设置，超时时间越短效果越好。 \n 36、如何关闭动态页面模板在线修改 \n 答：如果不想开启在后台修改动态页面模板，可以修改 /e/config/config.php 文件里的“$ecms_config['esafe']['openeditdttemp']”变量值为0。 \n 37、专题评论表单制作 \n 答： 专题评论访问地址 /e/pl/?doaction=dozt&classid=专题ID \n 专题的评论表单需增加： \n 38、7.0及以上版本如何调用专题的信息？ \n 答： 调用专题的信息要改用“索引灵动标签”(e:indexloop)调用。 \n [e:indexloop={索引分类ID,显示条数,操作类型,栏目ID,系统模型ID,附加SQL条件}] \n 模板代码内容 \n [/e:indexloop] \n 39、如何调用专题的推荐信息？ \n 答： “索引灵动标签”的“附加SQL条件”设置： \n 所有推荐信息用：'isgood>0' \n 二级推荐的信息用：'isgood=2' \n 40、多值字段如何调用？ \n 答： 多值字段存放方式：多个值之间用“||||||”分隔、值里的各个选项之间用“::::::”分隔。下面为内容模板中显示多值字段例子： \n $morefr=explode('||||||',$navinfor['字段名']); \n $mfcount=count($morefr); \n for($mfi=0;$mfi \n { \n $morefrf=explode('::::::',$morefr[$mfi]); \n ?> \n 选项1： \n 选项2： \n 选项3： \n 选项4： \n ...... \n } \n ?> \n 41、为什么用SQL调用不能加“checked=1”条件？ \n 答： 因为7.0及以上版本的待审核信息与发布信息单独表存放，所以调用前台信息不再需要checked=1条件，效率更高。只需将此SQL条件删除即可。 \n 42、专题页面有哪些PHP变量？ \n 答： 当前专题ID或当前专题子类ID变量为“$GLOBALS['navclassid']”。 \n 当为专题子类页面时，则所属专题ID变量为“$GLOBALS['navinfor']['ecmsbid']”，当等于0时就是专题页，更容易识别专题页与专题子类页。 \n 43、7.0及以上版本专题的信息采用独立表存放，数据表并没有ispic识别字段，如何只调用带图片的信息呢？ \n 答： 有两种方法可以实现： \n 第一种：增加一个专题子类 专门用来存放带图片的信息，这样增加信息时就可以将信息直接推送到这个专题子类。然后模板用索引灵动标签按这个专题子类调用信息。 \n 第二种：把带图片的信息 设置到某一个推荐级别里，在管理专题信息页面将带图片的信息 设置为某一级推荐，然后模板用索引灵动标签按这级推荐调用信息(如一级推荐：标签附加sql条件用 'isgood=1')。 \n 用索引灵动标签制作幻灯效果可以参考这个教程： http://www.phome.net/zx/empirecms/temp/689.html \n 44、7.0版使用技巧之：调用当前专题下级子类 \n 帝国CMS 7.0版使用技巧之：调用当前专题下级子类： http://www.phome.net/zx/empirecms/doc/206.html \n 45、7.0版使用技巧之：调用当前专题的子类及信息列表 \n 帝国CMS 7.0版使用技巧之：调用当前专题的子类及信息列表： http://www.phome.net/zx/empirecms/doc/207.html \n 46、7.0版本商城使用常见问题与技巧教程 \n 帝国CMS 7.0版本商城使用常见问题与技巧教程： http://www.phome.net/zx/empirecms/doc/208.html \n 47、相关链接的依据是？ \n 答： 通过标题是否包括＂关键字＂来查询，也可设置相同关键字也关联，可以到参数设置那设置 \n 48 、列表页提示“Parse error: syntax error, unexpected ' \n 您选择了使用模板支持程序代码功能，但模板程序代码有问题所致，检查模板里的程序代码语法。 \n 关于“模板list.var支持程序代码”使用教程可以看： http://www.phome.net/zx/empirecms/doc/164.html \n 49、按SQL语句查询调用使用说明 \n 标签上面的“ 操作类型 ”参数要设为 24 ，然后 “栏目id” 参数 为SQL语句 \n 调用例子。以ecmsinfo为例： \n [ecmsinfo] \"select * from phome_ecms_news where classid=1 order by id desc limit 10\" ,10,30,0, 24 ,1,0[/ecmsinfo] \n 50、用PHP代码实现灵动标签的技巧 \n 帝国CMS用PHP代码实现灵动标签的技巧： http://www.phome.net/zx/empirecms/doc/239.html \n 51、灵动标签调用外部数据 \n 用灵动标签调用外部数据： http://www.phome.net/zx/empirecms/temp/690.html \n 52、灵动标签调用栏目导航技巧 \n 灵动标签调用栏目导航技巧： http://www.phome.net/doc/manual/template/html/eloopgetclass.html \n 53、用灵动标签制作幻灯 \n 用灵动标签制作幻灯： http://www.phome.net/zx/empirecms/temp/689.html \n 54、标签调用的附加SQL条件和排序参数使用说明 \n 标签调用的附加SQL条件和排序参数使用说明： http://www.phome.net/zx/empirecms/temp/688.html \n 55、自定义系统扩展变量功能使用说明 \n 自定义系统扩展变量功能使用说明： http://www.phome.net/zx/empirecms/doc/697.html \n 56、万能标签(ecmsinfo)和灵动标签(e:loop)主要区别： \n 万能标签(ecmsinfo)和灵动标签(e:loop)是帝国CMS模板制作的两大法宝，只要会其中之一就能熟练撑握和制作帝国各种模板。 \n (1)、万能标签需先制作标签模板，而灵动标签不需要； \n (2)、万能标签和灵动标签调用各种显示效果，用两者之一都能调用出来。但万能标签在多行多列时可能更方便些，灵动标签要配合css来控制几行几列（用div+css的话，两者基本上是没区别的，用table实现多列要用万能标签）； \n (3)、灵动标签比万能标签效率会高一点，因为不需要读取标签模板。 \n 57、为什么查看源文件有内容，但页面显示空白? \n 答： 是因为你的HTML代码不良写法导致，修改模板将“ ”移到“ [!--pagetitle--] ”上面即可解决。 \n 58、截取字数加省略号的方法 \n 一般截取字数用 \n 加省略号你改成这个就可以了 \n 59、SQL调用非终极栏目处理技巧 \n SQL语句调用要指定终极栏目ID，如果不想手动指定多个终极栏目ID，可以用下面方法： \n select * from [!db.pre!]ecms_news where isgood=1 and \". ($class_r[$GLOBALS['navclassid']]['islast']?\"classid='\".$GLOBALS['navclassid'].\"'\":ReturnClass($class_r[$GLOBALS['navclassid']]['sonclass'])) .\" order by newstime desc limit 10 \n 60、不规则新闻的调用方法： \n 实现不规则新闻或信息调用： http://www.phome.net/zx/empirecms/doc/151.html \n 61、碎片使用步骤： \n 碎片使用一般步骤： \n (1)、增加碎片； \n (2)、修改模板在要显示碎片内容的地方加上碎片标签调用碎片； \n (3)、更新碎片里维护碎片显示内容。（碎片里设置更新权限的用户才有权限查看与更新） \n 动态信息碎片可以在管理信息时将信息直接推送到碎片，支持多表推送 \n 62、排除模板标签语法错误的技巧： \n 可以先备份好模板内容，然后一段段删除模板内容和刷新生成页面，直到发现不中断刷新生成位置代码。 \n 63、如果把默认模板组删除了，进不了管理模板页面怎么办？ \n 答： 可以直接访问 /eadmin/admin/template/TempGroup.php 页面设置默认模板组。 (7.5及以下版本访问 /e/admin/template/TempGroup.php 页面) \n 64、帝国网站管理系统功能解密 系列教程 \n 帝国网站管理系统功能解密 系列： http://www.phome.net/zx/empirecms/doc/188.html \n 65、不同栏目的判断： \n if($GLOBALS['navclassid']==5) \n { \n ?> \n 栏目ID=5时显示内容 \n } \n elseif($GLOBALS['navclassid']==6) \n { \n ?> \n栏目ID=6时显示内容 \n } \n ?> \n 66、灵动标签技巧：多少天内的信息显示new字样 \n [e:loop={栏目ID,显示条数,操作类型,只显示有标题图片}] \n $newimg=\"\"; \n if(time()-$bqr['newstime'] 3 *24*3600) \n { \n $newimg=\" \"; \n } \n ?> \n \" target=\"_blank\"> \n [/e:loop] \n (多少天改红色字的数字，上面是3天) \n 67、调用序号变量： \n 灵动标签用： \n 万能标签用：[!--no.num--] \n 列表模板用：[!--no.num--] \n 68、灵动标签调用如何显示后台设置的标题颜色？ \n 用： \n 69、多表关联查询SQL语句： \n 如用userid字段关联会员主表与副表的SQL： \n select a.userid,a.username,b.truename,b.company from phome_enewsmember as a LEFT JOIN phome_enewsmemberadd as b ON a.userid=b.userid order by a.userid desc limit 10 \n 70、简介字段的显示字数在哪设置？ \n 修改列表模板、修改标签模板里的“简介截取字数”。 \n 71、调用今天发布的信息列表： \n 灵动标签附加sql条件参数用： \n \"newstime>='\".to_time(date(\"Y-m-d\").\" 00:00:01\").\"' and newstime \n 72、调用本月发布信息列表： \n 灵动标签附加sql条件参数用： \n \"newstime>='\".to_time(date(\"Y-m\").\"-01 00:00:01\").\"'\" \n 73、灵动标签实现不同行不同css样式： \n [e:loop={3,16,0,0}] \n $bqcss =''; \n if($bqno==1) \n { \n $bqcss ='css1'; \n } \n elseif($bqno==2) \n { \n $bqcss ='css2'; \n } \n else \n {} \n ?> \n $bqcss ?>\"> \" target=\"_blank\"> \n [/e:loop] \n 74、万能标签或列表模板实现不同行不同css样式： \n 标签模板或列表模板的“ 页面模板内容 ”为如下： \n [!--empirenews.listtemp--] \n [!--empirenews.listtemp--] \n 75、灵动标签实现调用本栏目上一篇和下一篇信息： \n 内容模板中调用本栏目上一篇信息： \n $havepre=0; \n ?> \n [e:loop={'selfinfo',1,0,0,'id \n$havepre=1; \n?> \n \">上一篇: \n [/e:loop] \n if(empty($havepre)) \n { \n echo \"上一篇:没有了\"; \n } \n ?> \n 内容模板中调用本栏目下一篇信息： \n$havenext=0; \n?> \n [e:loop={'selfinfo',1,0,0,'id>'.$navinfor['id'].'','id asc'}] \n $havenext=1; \n?> \n \">下一篇: \n [/e:loop] \n if(empty($havenext)) \n { \n echo \"下一篇:没有了\"; \n } \n ?> \n 76、本栏目上一篇和下一篇信息的链接： \n [!--news.url--]e/public/GotoNext/?classid=[!--classid--]&id=[!--id--]&enews=pre \">上一篇 \n [!--news.url--]e/public/GotoNext/?classid=[!--classid--]&id=[!--id--]&enews=next \">下一篇 \n 77、栏目页下只有一条信息，想在栏目页直接调用这条信息内容，怎么做？ \n 单页一般用自定义页面做，如果要用栏目页调用内容页也可以用下面这个sql调用： \n [e:loop={\"select * from {$dbtbpre}ecms_news where classid='\".$GLOBALS['navclassid'].\"' limit 1\",1,24,0}] \n $fr=$empire->fetch1(\"select newstext from {$dbtbpre}ecms_news_data_{$bqr['stb']} where id='\".$bqr['id'].\"'\"); \n ?> \n 标题： \n 内容： \n [/e:loop] \n 78、调用本栏目的信息数： \n 本栏目信息数： \n $cr=$empire->fetch1(\"select infos from {$dbtbpre}enewsclass where classid='\".$GLOBALS['navclassid'].\"'\"); \n echo $cr['infos']; \n ?> \n 79、模板里调用自定义字段名： \n 灵动标签调用用： \n 万能标签调用用：[!--字段名--] \n 列表模板、内容模板调用用：[!--字段名--] \n 80、如何通过CSS改变内容里的图片大小？ \n 可以在css里定义个优先级定义 !important ，例如： \n img { \nwidth: 200px !important ; \n} \n 81、如何在模板中改变语言包的内容？ \n 比如：改变分页导航的中文等。 \n 可以在模板最上面加： \n $GLOBALS['fun_r']['语言包对应变量名']=\"覆盖英文内容\"; \n 82、灵动标签判断字段是否有内容： \n [e:loop={3,16,0,0}] \n if(empty($bqr['字段名'])) \n { \n $fieldval='字段没内容时显示内容'; \n } \n else \n { \n $fieldval=$bqr['字段名']; \n } \n ?>   \n ...... \n [/e:loop] \n 83、灵动标签调用友情连接的方法： \n [e:loop={'select * from [!db.pre!]enewslink where checked=1 and classid=3 order by lid',20,24,0}] \n \" target=\"_blank\"> \n [/e:loop] \n 其中classid=3，3为分类ID \n 84、灵动标签调用广告的方法： \n [e:loop={'select * from [!db.pre!]enewsad where adid=6',1,24,0}] \n \" target=\"_blank\"> \" border=0> \n [/e:loop] \n 其中adid=6，6为广告ID \n 85、内容页获取栏目简介： \n 可在内容模板加如下调用： \n$cr=$empire->fetch1(\"select intro from {$dbtbpre}enewsclass where classid='\".$GLOBALS['navclassid'].\"'\");\n?> \n 栏目简介： \n 86、在TAGS页面怎么获取当前ID： \n 当前tagid调用用： \n 87、灵动标签直接调用电影系统模型的视频地址： \n 视频地址： \n [e:loop={140,1,0,0,'isgood=9'}] \n $fr=$empire->fetch1(\"select onlinepath from {$dbtbpre}ecms_movie_data_{$bqr['stb']} where id='\".$bqr['id'].\"'\"); \n $olurl=explode('::::::',$fr['onlinepath']); \n ?> \n [/e:loop] \n 88、调用当前栏目所属标题分类： \n$cr=$empire->fetch1(\"select ttids from {$dbtbpre}enewsclassadd where classid='\".$GLOBALS['navclassid'].\"'\"); \n$ctr=explode(',',$cr['ttids']); \n$tcount=count($ctr)-1; \nfor($ti=1;$ti \n{ \n$cttid=(int)$ctr[$ti]; \nif(empty($cttid)) \n{continue;} \n$cttr=$empire->fetch1(\"select tname from {$dbtbpre}enewsinfotype where typeid='\".$cttid.\"'\"); \n?> \n标题分类ID： ，标题分类名称： \n } \n ?> \n 89、图集morepic字段怎么实现分开调用？ \n 分割morepic字段内容： \n $picr=explode(egetzy('rn'),$navinfor['morepic']); \n for($p=0;$p \n { \n $spicr=explode(\"::::::\",$picr[$p]); \n ?> \n 小图地址： \n 大图地址： \n 图片名称： \n } \n ?> \n 90、内容页里调用下载系统模型的第一个下载地址： \n $pathr=explode(egetzy('rn'),$navinfor['downpath']); \n $path=explode(\"::::::\",$pathr[0]); \n ?> \n 下载地址1： \n 91、灵动标签实现隔行变色： \n [e:loop={3,16,0,0}] \n $bgcolor='颜色1'; \n if($bqno%2==0) \n { \n $bgcolor='颜色2'; \n } \n ?> \n \"> \" target=\"_blank\"> \n [/e:loop] \n 92、内容页没有相关链接时显示其他内容： \n if($navinfor['keyid']) \n { \n ?> \n 有相关链接显示 \n } \n else \n { \n ?> \n 没有相关链接显示 \n } \n ?> \n 93、下载系统模型的最终下载页怎么调用自定义字段？ \n 用： \n 94、怎么调用留言数？ \n 留言数： gettotal(\"select count(*) as total from {$dbtbpre}enewsgbook where bid=留言分类ID\");?> \n 95、当前栏目ID和栏目名的php变量是： \n 当前栏目ID：$GLOBALS['navclassid'] \n 当前栏目名：$class_r[$GLOBALS['navclassid']]['classname'] \n 96、灵动标签里调用信息所属的一级栏目名： \n [e:loop={3,16,0,0}] \n $fcr=explode('|',$class_r[$bqr['classid']]['featherclass']); \n $topbclassid=$fcr[1]?$fcr[1]:$bqr['classid'];//取得当前栏目的一级栏目ID \n ?> \n 一级栏目名： \n 一级栏目地址：/ \n ...... \n [/e:loop] \n 97、一个栏目只调用一条信息的SQL语句： \n 可按标签SQL调用： \n select * from phome_ecms_表名 where isgood>0 group by classid order by newstime desc limit 10 \n 98、如何让列表的背景颜色交替显示？ \n [!--empirenews.listtemp--] \n [!--empirenews.listtemp--] \n 99、内容页调用当前会员的发布的投稿信息 \n 标签附加SQL条件参数用： \"userid='\".$navinfor['userid'].\"' and ismember=1\" \n 100、在列表页面列出当前模型的标题分类 \n 用灵动标签sql调用： \n [e:loop={\"select typeid,tname from {$dbtbpre}enewsinfotype where mid='\".$class_r[$GLOBALS['navclassid']]['modid'].\"' order by myorder\",0,24,0}] \n 标题分类ID： \n 标题分类名称： \n [/e:loop] \n 101、调用当前栏目的页面内容： \n $cpage=$empire->fetch1(\"select classtext from phome_enewsclassadd where classid='\".$GLOBALS['navclassid'].\"'\"); \n echo $cpage['classtext']; \n ?> \n 102、标签调用指定ID列表的信息： \n 附加SQL条件参数用：'id in (1,2,3)' \n (上面“1,2,3”为ID列表) \n 103、灵动标签判断发布时间与今天相同： \n if(date('Y-m-d')==date('Y-m-d',$bqr['newstime'])) \n 104、内容页获取该频道首页连接地址： \n 栏目链接动态地址：[!--news.url--]e/public/ClassUrl/?classid=[!--classid--] \n 栏目链接静态地址： \n 105、调用当前栏目的上级栏目的信息： \n $bclassid =$class_r[$GLOBALS['navclassid']]['bclassid']; \n ?> \n [ecmsinfo] $bclassid ,显示条数,标题截取数,是否显示栏目名,操作类型,标签模板ID,只显示有标题图片[/ecmsinfo] \n 106、如何在内容模板里面计算2个字段数值的相除结果？ \n 用： \n 107、JS方式：在列表中如果没有图片可指定自定义的图片 \n [!--titlepic--]改为你的[!--字段名--] \n 108、内容页判断字段有没有值： \n if($navinfor['字段名']) \n { \n ?> \n 字段有值时显示内容 \n } \n else \n { \n ?> \n 字段没有值时显示内容 \n } \n ?> \n 109、调用当前栏目下信息总数： \n [totaldata]$GLOBALS['navclassid'],0,0[/totaldata] \n 110、首行自动缩进2个字的简单方法 \n 本方法就是CSS定义 符号空两个字，代码如下： \n 111、怎样获取VIP企业会员列表？ \n 用灵动标签SQL调用： \n select a.userid,a.username,b.company as title from phome_enewsmember as a LEFT JOIN phome_enewsmemberadd as b ON a.userid=b.userid and a.groupid=VIP企业会员组id order by userid desc limit 10 \n 如果只想调用副表还可以用以下SQL调用： \n select userid,company as title from phome_enewsmemberadd where userid in (select userid from phome_enewsmember where groupid=VIP企业会员组id) order by userid desc limit 10 \n 112、列表模板如何设置指定几条信息后显示广告？ \n [!--empirenews.listtemp--] \n 广告1 \n 广告2 \n ......\n [!--empirenews.listtemp--] \n 113、自定义列表/JS怎么实现调用非信息表的内容？ \n 答： 查询SQL可以用“字段名 as 系统模型的字段名”。比如查询专题表用：select ztname as title,ztpath as ftitle,ztimg as titlepic,intro as smalltext from phome_enewszt，然后模板里用[!--title--]调用专题名、用[!--ftitle--]调用专题目录、用[!--titlepic--]调用专题缩图、用[!--smalltext--]调用专题简介。 \n 114、怎么在专题页调用当前专题缩图？ \n 用这个： \n $selfztid=$GLOBALS['navinfor']['ecmsbid']?$GLOBALS['navinfor']['ecmsbid']:$GLOBALS['navclassid']; \n $ztr=$empire->fetch1(\"select * from phome_enewszt where ztid='$selfztid'\"); \n ?> \n 专题缩图： 、专题名： \n 115、灵动标签没有标题图片时指定显示某一张图片： \n \"> \n 116、如何取得当前栏目的顶级栏目的名称？ \n 用： \n $fcr=explode('|',$class_r[$GLOBALS['navclassid']]['featherclass']); \n $topbclassid=$fcr[1]?$fcr[1]:$GLOBALS['navclassid'];//取得当前栏目的顶级栏目ID \n ?> \n 顶级栏目名： \n 117、如何在电影内容页读取播放器的名称？ \n 内容模板用这个： \n $p=$empire->fetch1(\"select * from phome_enewsplayer where id='\".$navinfor['playerid'].\"'\"); \n ?> \n 播放器名称： \n 118、在内容模板中调用在线地址字段的内容 \n 内容模板用这个： \n $rr=explode(egetzy('rn'),$navinfor['onlinepath']); \n $rcount=count($rr); \n for($pathi=0;$pathi \n { \n $fr=explode('::::::',$rr[$pathi]); \n ?> \n 视频地址名称： \n 视频地址： \n } \n ?> \n 119、内容页如何将标题设置的颜色效果调用出来？ \n 用： \n 120、如何在内容页调用栏目名、栏目图片、栏目简介？ \n 用灵动标签sql调用： \n [e:loop={\"select classid,classname,classimg,intro from phome_enewsclass where classid='\".$GLOBALS['navclassid'].\"'\",1,24,0}] \n 栏目名： \n 栏目图片： \"> \n 栏目简介： \n [/e:loop] \n 121、怎么样将文章添加到会员收藏夹内呢? \n 内容模板里加： \n 加入收藏 \n 122、在内容模板中调用下载地址字段的内容 \n 内容模板用这个： \n$rr=explode(egetzy('rn'),$navinfor['downpath']); \n$rcount=count($rr); \nfor($pathi=0;$pathi \n{ \n$fr=explode('::::::',$rr[$pathi]); \n?> \n下载地址名称： \n下载地址： \n} \n?> \n 123、灵动标签调用排行序号技巧： \n 可以用 .gif\"> 调用，然后做 1.gif~N.gif 的图片。 \n 124、用万能标签调用友情连接： \n 用SQL查询调用，SQL语句： \n select lname as title,lurl as id,lpic as titlepic from phome_enewslink order by lid \n 标签模板中用[!--title--]表示站点名称、[!--id--]表示网站地址、[!--titlepic--]表示网站logo \n 125、栏目导航给当前栏目加亮 \n 用灵动标签调用 \n [e:loop={\"select classid,classname,classpath from phome_enewsclass where bclassid=父栏目id order by myorder,classid desc\",0,24,0}] \n $titleclass='menu_title'; \n if($bqr['classid']==$GLOBALS['navclassid']) \n { \n $titleclass='menu_title2'; \n } \n ?> \n \"> \" target=_blank> \n [/e:loop] \n 126、会员空间首页怎么调用会员发表的文章 \n 修改空间首页模板/e/space/template/default/index.temp.php，显示信息的地方加下面代码，表改成要调用的数据表名 \n $spacesql=$empire->query(\"select * from phome_ecms_表 where userid='\".intval($userid).\"' and ismember=1 order by newstime desc limit 10\"); \n while($spacer=$empire->fetch($spacesql)) \n { \n $titleurl=sys_ReturnBqTitleLink($spacer);//链接 \n ?> \n \"> \n } \n ?> \n 127、内容页中的打印选项： \n 加： 打印 \n 128、如何用 showplinfo标签 调用当前文章ID下的评论？ \n 用：[showplinfo]调用条数,标签模板ID, $navinfor['classid'] , $navinfor['id'] ,显示推荐评论,操作类型[/showplinfo] \n 129、用万能标签调用会员列表： \n (1)、 会员所有名字列表：[ecmsinfo]'select username as title from phome_enewsmember limit 10',10,18,0,24,18,0[/ecmsinfo] \n (2)、 会员中企业会员名字列表：[ecmsinfo]'select username as title from phome_enewsmember where groupid=4 limit 10',10,18,0,24,18,0[/ecmsinfo] \n (3)、 企业会员企业名称列表：[ecmsinfo]'select company as title from phome_enewsmemberadd limit 10',10,18,0,24,18,0[/ecmsinfo] \n 标签模板中用 [!--title--] 表示名称。 \n 130、判断不同栏目使用不同公共模板变量： \n 用栏目ID来判断 \n if(!$GLOBALS['navclassid']) \n { \n ?> \n [!--temp.header--] \n } \n elseif($GLOBALS['navclassid']==1) \n { \n ?> \n [!--temp.headertest1--] \n } \n elseif($GLOBALS['navclassid']==2) \n { \n ?> \n [!--temp.headertest2--] \n }\n else \n { \n ?> \n[!--temp.header--] \n } \n ?> \n 131、内容模板如何获得所在栏目的地址？ \n 链接方式一：[!--news.url--]e/public/ClassUrl/?classid=[!--self.classid--] \n 链接方式二： \n 132、怎么把登陆、注册。这些内容添加到自己的主页？ \n 加： \n 显示样式修改：后台>模板管理>公共模板>修改JS调用登录模板 \n 133、如何在前台标题前显示该标题对应的标题分类？ \n 万能标签调用标题分类： \n 标题分类ID　[!--ttid--] \n 标题分类名称 [!--tt.name--] \n 灵动标签可以用： \n 标题分类ID　 \n 标题分类名称 \n 134、排行TOP10序号效果如何实现？ \n 万能标签用： \n 灵动标签用： \n .gif\"> \n 做1.gif~10.gif十个图片 \n 135、模板的导出与导入教程： \n 模板的导出与导入教程： http://www.phome.net/zx/empirecms/doc/213.html \n 136、循环栏目导航标签的使用教程： \n 功能解密之循环栏目导航标签： http://www.phome.net/zx/empirecms/doc/161.html \n 137、帝国CMS新手教程之：灵动标签套模板 \n 帝国CMS新手教程之：灵动标签套模板： http://www.phome.net/zx/empirecms/doc/777.html \n 138、帝国CMS新手教程之：万能标签套模板 \n 帝国CMS新手教程之：万能标签套模板： http://www.phome.net/zx/empirecms/doc/778.html \n 139、模板list.var支持程序代码使用教程： \n 功能解密之模板list.var支持程序代码： http://www.phome.net/zx/empirecms/doc/164.html \n 140、会员空间的信息标签调用教程： \n 功能解密之会员空间信息标签调用： http://www.phome.net/zx/empirecms/doc/166.html \n 141、会员空间的自定义单页面教程： \n 功能解密之会员空间自定义单页面： http://www.phome.net/zx/empirecms/doc/167.html \n 142、会员自定义字段搜索教程： \n 功能解密之会员自定义字段搜索： http://www.phome.net/zx/empirecms/doc/169.html \n 143、会员列表多样式使用说明： \n 功能解密之会员列表多样式： http://www.phome.net/zx/empirecms/doc/170.html \n 144、会员信息调用教程： \n 功能解密之会员信息调用： http://www.phome.net/zx/empirecms/doc/168.html \n 145、帝国CMS使用技巧之调用自定义页面： \n 帝国CMS使用技巧之调用自定义页面： http://www.phome.net/zx/empirecms/temp/301.html (使用PHP8环境，数组需要加引号) \n 146、让gbk和utf8模板共用的技巧： \n 让gbk和utf8模板共用： http://www.phome.net/zx/empirecms/temp/626.html",
+   "links": [
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/708.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/708.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/tool/717.html",
+     "href": "http://www.phome.net/zx/empirecms/tool/717.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/use/218.html",
+     "href": "http://www.phome.net/zx/empirecms/use/218.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/temp/689.html",
+     "href": "http://www.phome.net/zx/empirecms/temp/689.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/206.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/206.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/207.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/207.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/208.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/208.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/164.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/164.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/239.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/239.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/temp/690.html",
+     "href": "http://www.phome.net/zx/empirecms/temp/690.html"
+    },
+    {
+     "text": "http://www.phome.net/doc/manual/template/html/eloopgetclass.html",
+     "href": "http://www.phome.net/doc/manual/template/html/eloopgetclass.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/temp/688.html",
+     "href": "http://www.phome.net/zx/empirecms/temp/688.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/697.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/697.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/151.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/151.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/188.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/188.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/213.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/213.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/161.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/161.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/777.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/777.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/778.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/778.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/166.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/166.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/167.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/167.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/169.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/169.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/170.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/170.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/168.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/168.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/temp/301.html",
+     "href": "http://www.phome.net/zx/empirecms/temp/301.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/temp/626.html",
+     "href": "http://www.phome.net/zx/empirecms/temp/626.html"
+    }
+   ],
+   "content_len": 20514
+  },
+  "qmod": {
+   "id": "qmod",
+   "title": "帝国CMS自定义系统模型相关常见问题",
+   "category": "常见问题大全",
+   "content": "帝国CMS自定义系统模型相关常见问题 \n 帝国CMS自定义系统模型相关常见问题 \n 自定义系统模型相关常见问题 \n 1、什么是系统模型？ \n 系统模型就是通常所说的系统模块，如：新闻系统,下载系统,商城系统等。而自定义系统模型就是用户可以根据需要自由扩展各种系统模块。 \n帝国CMS卓越之处在于：不仅提供了网站管理功能，而且还提供了系统扩展框架，您可以直接在后台通过新建表、自定义字段，然后组成新的系统模型，以实现各种适合用户自己的系统。如下载系统、音乐系统、商城系统、产品库、分类信息等等......不同模型不同录入界面与管理列表。同时，此功能可将信息量分配于不同的信息表，支持无限分表无限容量，为数据量较大的网站进行数据部署。因系统模型扩展特性，帝国CMS又被誉为“万能建站工具”。在4.7及以上版本中，此功能又一次得到升华，不仅增强了后台管理系统的可扩展性，而且前台互动性系统的扩展也能发挥得淋漓尽致，在稳定性、扩展性与完善性等诸多方面都得到了更完美的提升！ \n 2、自定义系统模型的基本流程： \n (1)、系统分析； （分析新建的模型需要哪些属性） \n (2)、增加数据表； （建立要存放数据的表） \n (3)、增加字段； （建立存放数据的格式） \n (4)、增加系统模型； （建立录入数据界面的格式） \n (5)、完成。 \n 3、演示用自定义系统模型制作产品展示系统： \n 演示用自定义系统模型制作产品展示系统： http://www.phome.net/zx/empirecms/mod/706.html \n 4、系统内置关键字字段说明： \n 系统内置关键字字段说明： http://www.phome.net/zx/empirecms/mod/709.html \n 5、接第3条补充后续版本新增的内置关键字字段： \n eipf ：记录IP所在区域，字段类型用VARCHAR、长度30。 \n infoipport ：记录访问IP端口，字段类型用VARCHAR、长度6。 \n elpltime ：记录最后评论时间，字段类型用int。(不要选择字段为录入项、投稿项) \n 6、前台发布投稿，如何设置发布后返回指定页面？ \n 1、投稿表单加提交后返回地址变量：ecmsfrom \n ecmsfrom变量值有三种方式： \n (1)、如果不设置则返回系统默认的地址； \n (2)、如果值为9，那么返回的是提交地址，系统自动识别； \n (3)、如果设置除了9以外其它值，将返回变量值的地址。 \n 例子： \n 2、如果是设置增加投稿后返回内容页，则在投稿表单中加： \n 3、如果是设置修改投稿后返回内容页，则在投稿表单中加： \n 7、字段处理函数使用： \n 帝国CMS功能解密之字段处理函数： http://www.phome.net/zx/empirecms/doc/173.html \n 8、系统模型处理函数使用： \n 帝国CMS7.5版系统模型新增信息“后台发布后处理函数”、“后台修改后处理函数”、“前台发布后处理函数”、“前台修改后处理函数”设置，系统扩展更灵活： http://www.phome.net/zx/pup/220.html \n 9、如何单独制作投稿页面，不用系统默认的： \n 做个HTML表单，表单含原信息投稿的字段变量(含classid/id/enews/字段等变量)即可，且表单的action指向/e/DoInfo/ecms.php就可以(action=\"/e/DoInfo/ecms.php\")。 \n 10、如何记录发布者IP： \n 增加“infoip”字段，infoip为记录IP的字段，只需将字段设置为录入项或投稿项，增加信息时自动存储发布者IP，字段类型用VARCHAR、长度50。 \n 11、如何制作字母导航： \n 增加“infozm”字段，infozm为取得标题字母的字段，只需将字段设置为录入项或投稿项，增加或修改信息时自动存储标题第一个拼音字母，字段类型用VARCHAR、长度1。 \n 列表页调用字母导航有以下两种方法： \n 1、增加26个字母的自定义列表导航页； \n 2、还有一种就是用结合项做导航，比如：/e/action/ListInfo.php?mid=系统模型ID&ph=1&infozm=A \n 12、限制一个注册用户在某一个特定栏目只能发布一条信息？ \n 建个会员ID字段，比如mymemberid，字段类型int，设置值唯一 \n 字段的投稿表单替换html代码： \n \" size=\"\"> \n (7.5及以上版本还可以在栏目选项设置里直接设置) \n 13、什么时候把字段放在主表或副表？ \n 字段不在列表页或标签中调用的最好都放到副表，主表字段越少效率越高。 \n 14、投稿表单如何自动获取会员注册资料里面的内容呢？ \n 修改字段，设置字段初始值为：$memberinfor['会员字段名']，比如：$memberinfor['oicq'] \n 15、多值字段修改为 可以上传图片的形式方法： \n 可以修改字段的HTML代码 加选择图片链接： (即通过改变ID名来实现) \n id=\"ffff_1_ \" value=\"\"> &infoid= &filepass= &sinfo=1&doing=1&field= ffff_1_ ','','width=700,height=550,scrollbars=yes');\" title=\"选择已上传的图片\"> \n 16、如果字段的html代码不对，如何让系统重新自动生成？ \n 答： 修改字段的“元素长度”就能让系统重新自动生成字段的html代码。(系统字段还可以选择“更新字段采集html代码”) \n 17、MYSQL有单表字段长度限制，如何能增加更多字段？ \n 答： 增加字段时减少选“采集字段”能增加更多字段数量。 \n 18、导入与导出系统模型教程： \n 导入与导出系统模型教程： http://www.phome.net/doc/manual/mod/html/loadmod.html \n 19、自定义系统模型功能解密教程： \n 功能解密之自定义系统模型： http://www.phome.net/zx/empirecms/doc/147.html",
+   "links": [
+    {
+     "text": "http://www.phome.net/zx/empirecms/mod/706.html",
+     "href": "http://www.phome.net/zx/empirecms/mod/706.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/mod/709.html",
+     "href": "http://www.phome.net/zx/empirecms/mod/709.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/173.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/173.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/pup/220.html",
+     "href": "http://www.phome.net/zx/pup/220.html"
+    },
+    {
+     "text": "http://www.phome.net/doc/manual/mod/html/loadmod.html",
+     "href": "http://www.phome.net/doc/manual/mod/html/loadmod.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/doc/147.html",
+     "href": "http://www.phome.net/zx/empirecms/doc/147.html"
+    }
+   ],
+   "content_len": 2583
+  },
+  "qcj": {
+   "id": "qcj",
+   "title": "帝国CMS采集相关常见问题",
+   "category": "常见问题大全",
+   "content": "帝国CMS采集相关常见问题 \n 帝国CMS采集相关常见问题 \n 采集相关常见问题 \n 1、采集操作流程： \n (1)、增加采集节点； \n (2)、预览采集正则是否正确； \n (3)、开始采集； \n (4)、对采集的数据进行审核并入库； \n (5)、生成栏目及内容HTML页面。 \n 2、帝国CMS采集正则实际就是：把 正则变量 替换为 要采集内容 后的代码内容。 \n 识别代码头部 [!--变量名--] 识别代码尾部 \n (注意事项：上面的“识别代码头部”一定是要唯一的标记，空格也是识别符号。) \n 范例： \n 如网页内容是：“ 要采集的内容 ” \n 采集正则就是：“ [!--变量名--] ” \n 3、帝国CMS采集正则还有表示任意内容的字符：“*” \n 如果“识别代码头部”中有内容是变化的，那么我们可以用*代替它。 \n 4、采集正则书写技巧： \n (1)、正则要找出唯一性的开头字符。有时候空格都会成为识别的依据。 \n (2)、对于特殊字符请在前面加上“\\\\”，当然直接将特殊字符改为“*”最合适了。特殊字符如下： \n “ )”、“(”、“{”、“}”、“[”、“]”、“\\”、“?”等等。 \n 5、采集时提示：Warning: preg_replace() [function.preg-replace]: Compilation failed: range out of order in character class... \n 答： 你的采集正则变量名写错导致，请检查你的正则变量。 \n 6、过滤文章内容的链接： \n 广告过滤正则设置：“ , ” \n 7、同上得出，过滤font之类的标签： \n 广告过滤正则：“ , ”，其他依此类推。 \n 8、同一链接的页面如何重复采集： \n 到“管理采集节点”那清空节点即可重复采集已入库的页面。 \n 9、采集内容分页正则说明： \n 如果是全部列表式，则只需看第一页的页面HTML代码。 \n 10、“下载地址正则”格式说明： \n 格式：地址正则 ([!--ecmsdownpathurl--]) [!empirecms!] 名称正则 ([!--ecmsdownpathname--]) \n 说明：名称正则可以不设置，由系统自己命名。(两个正则是分开的，并且是用“ [!empirecms!] ”格开。) \n 11、“在线观看地址正则”格式说明： \n 格式：地址正则 ([!--ecmsonlinepathurl--]) [!empirecms!] 名称正则 ([!--ecmsonlinepathname--]) \n 说明：名称正则可以不设置，由系统自己命名。(两个正则是分开的，并且是用“ [!empirecms!] ”格开。) \n 12、“图片集正则”格式说明： \n 格式：缩略图 ([!--ecmsspicurl--]) [!empirecms!] 大图 ([!--ecmsbpicurl--]) [!empirecms!] 名称 ([!--ecmspicname--]) \n 说明：大图与名称正则可以不设置。(三个正则是分开的，并且是用“ [!empirecms!] ”格开。) \n 13、什么字段可以选择远程保存文件？ \n 答： 只要字段“输入表单显示元素”是“图片(img)”、“FLASH文件”、“文件(file)”均支持远程保存文件到本地。 \n 14、哪个字段名支持远程保存内容里的图片？ \n 答： “newstext”字段名才支持远程保存内容里的图片和FLASH到本地。 \n 15、服务器是否支持采集或远程保存功能说明： \n 支持采集或远程保存需要满足以下两个条件： \n (1)、php配置文件 php.ini 的allow_url_fopen项要设置为On \n allow_url_fopen = On \n (2)、服务器DNS设置： \n 远程读取是通过服务器去访问对方网页或文件，所以你的服务器访问不了对方网站或速度慢就会无法读取或保存。 \n 还有部分DNS可能无法访问部分网站，这个都要注意。 \n 16、测试空间是否支持采集或远程保存： \n 本地用记事本建个 fp.php 文件，内容为如下： \n echo file_get_contents('http://www.163.com'); \n ?> \n 然后把fp.php文件上传空间访问，如果访问fp.php显示内容为http://www.163.com网站内容就表明空间支持采集与远程保存，否则为不支持。 \n 测试建议：连续访问fp.php文件多次，以测试空间网络是否稳定，部分空间网络不稳定会一会儿能读取一会儿不能。 \n 17、如何采集源页面地址？ \n 系统模型表新增加一个字段：“empireselfurl”，这个字段不用设置正则，入库后他自然就是采集的页面地址。 \n 18、放一个帝国的万能采集过滤正则： \n 放一个帝国的万能采集过滤码(含正则)： http://www.phome.net/zx/empirecms/cj/622.html \n 19、帝国CMS基础教程之采集使用篇： \n 帝国CMS基础教程之采集使用篇： http://www.phome.net/zx/empirecms/cj/257.html \n 20、特殊字段正则的说明： \n 特殊字段正则的说明： http://www.phome.net/zx/empirecms/cj/704.html \n 21、实例教你使用采集： \n 实例教你使用采集： http://www.phome.net/zx/empirecms/cj/703.html \n 22、帝国CMS采集正则介绍与写法： \n 帝国CMS采集正则介绍与写法： http://www.phome.net/zx/empirecms/cj/702.html",
+   "links": [
+    {
+     "text": "http://www.phome.net/zx/empirecms/cj/622.html",
+     "href": "http://www.phome.net/zx/empirecms/cj/622.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/cj/257.html",
+     "href": "http://www.phome.net/zx/empirecms/cj/257.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/cj/704.html",
+     "href": "http://www.phome.net/zx/empirecms/cj/704.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/cj/703.html",
+     "href": "http://www.phome.net/zx/empirecms/cj/703.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/empirecms/cj/702.html",
+     "href": "http://www.phome.net/zx/empirecms/cj/702.html"
+    }
+   ],
+   "content_len": 2409
+  },
+  "namesay": {
+   "id": "namesay",
+   "title": "帝国CMS常用名称介绍",
+   "category": "常见问题大全",
+   "content": "帝国CMS常用名称介绍 \n 帝国CMS常用名称介绍 \n 常用名称介绍 \n 1、帝国CMS后台的“刷新”： \n 答： 就是指生成静态页面。 \n 2、“栏目名”与“栏目别名”的区别： \n 答： “栏目别名”：前台标签或信息列表显示的“栏目名”。（如标签里的“是否显示栏目名”就是显示这个） \n 3、“认证码”与“验证码”的区别： \n 认证码： 是网站内部的密码，只有知道内部密码才能进入账号、密码验证。 \n 验证码： 是防止重复提交及灌水作用。 \n 4、是否重复刷新的说明： \n 生成信息静态页面后，系统会加上相应的标记，记录已刷新过。后台刷新数据可选择是否重复刷新。 \n 5、什么是远程保存忽略地址？ \n 在此列表里的网站/地址将不会将文件远程保存本地。 \n 6、新闻内容字段可选择存放文本说明： \n 此功能主要针对大数据量数据用户而设计的。数据内容量越大效果越明显．如论文，小说等单信息数据内容量大的 \n 7、什么是系统模型？ \n 系统模型是指: 新闻系统模型,下载系统模型,商城系统模型等.用户也可以后台直接自定义系统模型.\n 帝国CMS是不同于以往的CMS系统，他可以直接在后台通过新建表、自定义字段，然后组成新的系统模型。从而实现各种适合用户自己的系统。 \n 8、新闻系统模型与文章系统模型的区别： \n 1、新闻系统模型的内容(newstext)是存放数据库的；而文章系统模型的内容(newstext)是存放于文本文件。对于数据量比较大的，推荐使用文章系统模型。 \n2、新闻系统模型支持内容(newstext)搜索(需放主表)；而文章系统模型不支持内容(newstext)搜索。 \n 9、什么是信息归档？ \n 对于一些旧的信息，用户可以采用归档功能，将其归档到其它数据表，以减轻主数据表的负担，使系统稳定性与效率更高。 \n 10、什么是远程发布？ \n 你可以将帝国CMS系统装在本地，然后发布信息到远程服务器的功能。此功能针对空间不支持php并且页面少的站点使用。 \n 11、什么是模板？ \n 为网站页面显示的界面样式或格式。方便后期维护和批量修改界面。 \n 12、标签模板与模板标签的区别： \n 标签模板： 是为ecmsinfo标签服务，用于制作显示样式 \n 模板标签： 如[ecmsinfo]，[phomenews]等都是模板标签 \n 13、帝国几个模板中的定义： \n 网站的构成 ，一般是这样： \n1、首页 ，2、频道页 ，3、信息列表页 ，4、信息显示页 \n 可以理解成这几个对应的就是： \n1、首页模板 ，2、封面模板 ，3、列表模板 ，4、内容模板\n 至于标签模板，是定义ecmsinfo等标签调用数据时候用什么格式来显示 \n 14、栏目的页面显示模式说明： \n 封面式： 选择封面式后需选择封面模板。封面模板支持所有标签调用。 \n 列表式： 选择列表式后需选择列表模板。列表式为分页显示信息方式。 \n 页面内容式： 选择页面内容式后需填写“页面内容”。页面内容支持所有标签调用。 \n 栏目绑定信息： 选择栏目绑定信息后需设置“绑定信息ID”。设置后该栏目页面显示内容就是该信息页内容。 \n 15、什么是会员空间？ \n 会员可以将自己发布的信息展示在的会员空间里，有点类似于一个会员一个网站。(默认关闭，要开启需要到系统参数设置里开启) \n 16、信息签发是什么？ \n 设置哪些信息需要哪些人签名后才能发布。后台可自定义工作流设置签发的部门、用户名、用户组，最多支持100级工作流。 \n 17、什么是l碎片调用？ \n 碎片也就是网页中某一块信息的调用与管理。像门户中页面每块信息调用就是一个碎片，让不同管理员更新不同的区域块信息。并且支持多表调用、占很少的资源、速度更快。详细介绍： http://www.phome.net/zx/pup/258.html \n 18、帝国CMS的3种碎片调用介绍： \n 1、静态信息碎片 \n 有以下两种录入方式： \n (1)、以手动方式增加信息的标题、链接、简介等内容。 \n (2)、通过信息ID获取信息内容。 \n 2、动态信息碎片 \n 有以下两种录入方式： \n (1)、管理信息页面里推送信息到碎片。 \n (2)、手动指定要调用的信息ID。 \n 3、代码碎片 \n 手动可视化或代码下编辑调用内容。（支持自动备份，并且可还原备份） \n 19、什么是父子信息？ \n 帝国CMS8.0版新增父子信息功能，让一条信息也能成为一个信息、一个栏目、一个专题、甚至一个网站。让信息可重新任意关联组合。 \n 20、什么是采集？ \n 把其它网站上的东西如新闻、图片等自动下载到EmpireCMS系统服务器的功能，可以大幅降低网站编辑人员的采编工作量。一般是转换程序时导数据使用。 \n 21、什么是“TAGS”？ \n 它是一种更为灵活的信息的分类方式。用户可以为每条信息添加一个或多个标签，从而根据这些标签把这些信息进行分类。 \n 22、什么是标题分类？ \n 可以对栏目增加的信息再次分类。 \n 23、什么是搜索转发？ \n 可以指定搜索某关键词转到指定页面。 \n 24、什么是专题？ \n 将栏目增加的信息再次归类集中显示到某一个专题或专题子类页面里。 \n 25、什么是优化方案？ \n 设置优化方案让您管理的数据量永远只有规定时间范围内的数量，让信息显示不随数据库增大而效率下降，让你实现更大的门户网站。在数据量非常大时使用，详细可查看： http://www.phome.net/zx/pup/300.html \n 26、什么是网站访问端？ \n 可以让不同终端设备访问时显示不同格式的内容。比如：电脑端、手机端、平板端、电视端等。一个终端增加一个访问端。 \n 27、什么是伪静态？ \n 伪静态实际就是动态，只是将地址伪装为静态地址，方便收录。 \n 28、什么是结合项？ \n 帝国独创的结合项功能支持按自定义字段、栏目、数据表、专题、标题分类、发布时间等对信息进行组合显示，非常灵活。 \n 29、什么是工作流？ \n 将发布的信息按预定义的规则传递的过程自动进行。 \n 30、什么是会员接口？ \n 将其他系统的会员整合到EmpireCMS的程序。 \n 31、什么是WAP？ \n 是一种支持手机访问网页的格式。 \n 32、什么是远程附件？ \n 将网站附件实时同步到远程独立的附件服务器，附件独立服务器，网站速度更快、更优化。 \n 33、什么是内容存放文本？ \n 将内容存为纯文本文件，对于数据量非常大的信息内容，如小说、论文或其它大型的内容数据来说，存放数据库是非常不适合的。 \n 34、后台登录证书验证 \n 用户设置绑定证书后必须通过证书页面进入才可登录网站后台，而从其他页面进入无法登录后台，更安全。 \n 35、MYSQL多服务器读写分离 \n 支持网站采用多台MYSQL服务器，使写入数据库操作与查询数据库操作在不同服务器操作，提高MYSQL负载与性能。 \n 36、后台随时认证码安全验证 \n 针对管理员电脑中毒或者服务器受ARP等攻击，可能导致当前管理员登录COOKIE等信息外泄与被获取导致安全问题情况。针对此类意外事件，帝国 CMS7.2版本后台新增“随时认证码”验证，随时使登录验证信息过期，不断产生新的登录信息，使旧的登录信息失效，更有效防御因各类意外事件登录信息外泄，导致安全问题情况。 \n 37、后台认证码预加密验证 \n 开启后台认证码预加密验证功能后，登录时会在客户端自动加密认证码，并且加密内容数秒后过期，可防止因宽带提供商出安全问题导致的信息泄漏影响后台。 \n 38、后台登录密码加密提交与密码加密生成器 \n 启用密码加密生成器后，用户登录后台填写的密码要用该密码生成器加密，更安全。密码加密支持混淆字典、随机干扰字符加密生成。支持密码加密内容过期时间验证、超过时间密码失效。可有效防止密码在网络传输过程中被截取，并且假使密码被知道、没有密码生成器也登录不了后台，更安全。 \n 39、后台登录上传文件认证 \n 用户设置绑定文件认证后，必须上传与指定的文件名和文件内容完全相同才可以通过登录。相当于几十万位密码验证。比如：拍张照片或录个视频作为密码也是极安全的。 \n 40、什么是首页方案？ \n 多首页方案功能，可以将某一方案作为临时首页，特别是在节假日制作特别首页非常有用。 \n 41、什么是充值类型？ \n 前台会员可通过购买充值类型来升级会员级别或增加点数的功能。 \n 42、什么是访问组？ \n 通过访问组可按会员组、会员内部组、会员管理组、会员白名单、会员白名单有效期进行访问或下载限制。做收费网站更方便。",
+   "links": [
+    {
+     "text": "http://www.phome.net/zx/pup/258.html",
+     "href": "http://www.phome.net/zx/pup/258.html"
+    },
+    {
+     "text": "http://www.phome.net/zx/pup/300.html",
+     "href": "http://www.phome.net/zx/pup/300.html"
+    }
+   ],
+   "content_len": 3531
+  }
+ }
+}

@@ -1,0 +1,1961 @@
+{
+  "project": "EmpireCMS 8.0 Documentation (中文手册知识库)",
+  "language": "zh-CN",
+  "cms_version": "8.0",
+  "generated_at": "2026-10-28",
+  "schema_version": "1.0",
+  "knowledge_base_dir": ".",
+  "document_count": 12,
+  "notes": "本索引由真实 JSON 内容生成，未修改任何原始手册文件。8 个分册 JSON 的 meta.title 原为占位符'总览'，其文档标题已在 title_source 中标注为'从官网分册索引页标题恢复'。所有 source_url 均取自各 JSON 的 meta.source 字段（官网文档地址）。",
+  "documents": [
+    {
+      "id": "ecms8-admindoc",
+      "title": "帝国CMS管理员设置手册",
+      "path": "empirecms8_admindoc.json",
+      "format": "json",
+      "language": "zh-CN",
+      "source_url": "http://www.phome.net/docs/admindoc/",
+      "cms_version": "8.0",
+      "title_source": "recovered from official section index <title> (JSON meta.title was placeholder '总览')",
+      "description": "帝国CMS 8.0 帝国CMS管理员设置手册。共 44 页，分为 8 个章节：其他管理、刷新任务、多访问端、总览、扩展设置、用户管理、界面菜单、系统整体参数设置。每页含清洗后的纯文本正文（HTML 标签已剥离、实体已解码，代码/标签语法保留）。",
+      "keywords": [
+        "其他管理",
+        "刷新任务",
+        "多访问端",
+        "总览",
+        "扩展设置",
+        "用户管理",
+        "界面菜单",
+        "系统整体参数设置",
+        "EmpireCMS",
+        "手册"
+      ],
+      "sections": [
+        {
+          "title": "其他管理",
+          "page_count": 10,
+          "pages": [
+            "usertotal",
+            "infototal",
+            "searchkey",
+            "searchurl",
+            "repnewstext",
+            "moveclassinfo",
+            "infodoc",
+            "deldata",
+            "votemod",
+            "dosql"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "刷新任务",
+          "page_count": 8,
+          "pages": [
+            "doautore",
+            "task",
+            "schall",
+            "wap",
+            "workflow",
+            "yhfa",
+            "netpay",
+            "postdata"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "多访问端",
+          "page_count": 1,
+          "pages": [
+            "moreport"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "总览",
+          "page_count": 1,
+          "pages": [
+            "adminmenu"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "扩展设置",
+          "page_count": 2,
+          "pages": [
+            "pubvar",
+            "diymenu"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "用户管理",
+          "page_count": 9,
+          "pages": [
+            "user",
+            "usergroup",
+            "userclass",
+            "setalgac",
+            "loginlog",
+            "dolog",
+            "adminstyle",
+            "sedituser",
+            "userinfolevel"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "界面菜单",
+          "page_count": 1,
+          "pages": [
+            "membermenu"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "系统整体参数设置",
+          "page_count": 12,
+          "pages": [
+            "setsys",
+            "setmod",
+            "setmorecs",
+            "setwjt",
+            "setdthc",
+            "setmptb",
+            "setdigg",
+            "setph",
+            "setpl",
+            "setshop",
+            "setsafe",
+            "setfw"
+          ],
+          "json_path": "pages.<page_id>.category"
+        }
+      ]
+    },
+    {
+      "id": "ecms8-bakdatadoc",
+      "title": "帝国CMS网站备份、迁移、数据转换与优化教程",
+      "path": "empirecms8_bakdatadoc.json",
+      "format": "json",
+      "language": "zh-CN",
+      "source_url": "http://www.phome.net/docs/bakdatadoc/",
+      "cms_version": "8.0",
+      "title_source": "recovered from official section index <title> (JSON meta.title was placeholder '总览')",
+      "description": "帝国CMS 8.0 帝国CMS网站备份、迁移、数据转换与优化教程。共 7 页，分为 4 个章节：大数据优化、总览、数据转换、网站备份与迁移。每页含清洗后的纯文本正文（HTML 标签已剥离、实体已解码，代码/标签语法保留）。",
+      "keywords": [
+        "大数据优化",
+        "总览",
+        "数据转换",
+        "网站备份与迁移",
+        "EmpireCMS",
+        "手册"
+      ],
+      "sections": [
+        {
+          "title": "大数据优化",
+          "page_count": 2,
+          "pages": [
+            "yhfa",
+            "bigdatasay"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "总览",
+          "page_count": 1,
+          "pages": [
+            "bakdata"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "数据转换",
+          "page_count": 2,
+          "pages": [
+            "emytopgsql",
+            "egbktoutf8"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "网站备份与迁移",
+          "page_count": 2,
+          "pages": [
+            "sitemove",
+            "upecms"
+          ],
+          "json_path": "pages.<page_id>.category"
+        }
+      ]
+    },
+    {
+      "id": "ecms8-cjdoc",
+      "title": "帝国CMS8.0版采集使用手册",
+      "path": "empirecms8_cjdoc.json",
+      "format": "json",
+      "language": "zh-CN",
+      "source_url": "http://www.phome.net/docs/cjdoc/",
+      "cms_version": "8.0",
+      "title_source": "recovered from official section index <title> (JSON meta.title was placeholder '总览')",
+      "description": "帝国CMS 8.0 帝国CMS8.0版采集使用手册。共 8 页，分为 4 个章节：总览、采集使用范例、采集功能说明、采集管理。每页含清洗后的纯文本正文（HTML 标签已剥离、实体已解码，代码/标签语法保留）。",
+      "keywords": [
+        "总览",
+        "采集使用范例",
+        "采集功能说明",
+        "采集管理",
+        "EmpireCMS",
+        "手册"
+      ],
+      "sections": [
+        {
+          "title": "总览",
+          "page_count": 1,
+          "pages": [
+            "cjusesay"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "采集使用范例",
+          "page_count": 1,
+          "pages": [
+            "cjexp1"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "采集功能说明",
+          "page_count": 4,
+          "pages": [
+            "makecj",
+            "cjzz",
+            "sfieldcjzz",
+            "mcjjc"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "采集管理",
+          "page_count": 2,
+          "pages": [
+            "addcj",
+            "listcj"
+          ],
+          "json_path": "pages.<page_id>.category"
+        }
+      ]
+    },
+    {
+      "id": "ecms8-cquestiondoc",
+      "title": "帝国CMS常见问题大全",
+      "path": "empirecms8_cquestiondoc.json",
+      "format": "json",
+      "language": "zh-CN",
+      "source_url": "http://www.phome.net/docs/cquestiondoc/",
+      "cms_version": "8.0",
+      "title_source": "recovered from official section index <title> (JSON meta.title was placeholder '总览')",
+      "description": "帝国CMS 8.0 帝国CMS常见问题大全。共 8 页，分为 2 个章节：常见问题大全、总览。每页含清洗后的纯文本正文（HTML 标签已剥离、实体已解码，代码/标签语法保留）。",
+      "keywords": [
+        "常见问题大全",
+        "总览",
+        "EmpireCMS",
+        "手册"
+      ],
+      "sections": [
+        {
+          "title": "常见问题大全",
+          "page_count": 7,
+          "pages": [
+            "qinstall",
+            "qadminlogin",
+            "qinfo",
+            "qtemp",
+            "qmod",
+            "qcj",
+            "namesay"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "总览",
+          "page_count": 1,
+          "pages": [
+            "quse"
+          ],
+          "json_path": "pages.<page_id>.category"
+        }
+      ]
+    },
+    {
+      "id": "ecms8-dbdoc",
+      "title": "帝国CMS 8.0 数据字典",
+      "path": "empirecms8_dbdoc.json",
+      "format": "json",
+      "language": "zh-CN",
+      "source_url": "http://www.phome.net/docs/dbdoc/dbdoc80/",
+      "cms_version": "8.0",
+      "title_source": "meta.title",
+      "description": "帝国CMS 8.0 官方数据字典。共 196 张数据表、2491 个字段，按表名索引；每张表含字段名、类型、说明与附加说明。",
+      "keywords": [
+        "数据字典",
+        "数据表",
+        "字段说明",
+        "数据库结构",
+        "表关系",
+        "EmpireCMS"
+      ],
+      "sections": [
+        {
+          "title": "phome_ecms_infoclass_news",
+          "field_count": 37,
+          "json_path": "tables.phome_ecms_infoclass_news"
+        },
+        {
+          "title": "phome_ecms_infotmp_news",
+          "field_count": 18,
+          "json_path": "tables.phome_ecms_infotmp_news"
+        },
+        {
+          "title": "phome_ecms_news",
+          "field_count": 37,
+          "json_path": "tables.phome_ecms_news"
+        },
+        {
+          "title": "phome_ecms_news_check",
+          "field_count": 37,
+          "json_path": "tables.phome_ecms_news_check"
+        },
+        {
+          "title": "phome_ecms_news_check_data",
+          "field_count": 13,
+          "json_path": "tables.phome_ecms_news_check_data"
+        },
+        {
+          "title": "phome_ecms_news_data_1",
+          "field_count": 13,
+          "json_path": "tables.phome_ecms_news_data_1"
+        },
+        {
+          "title": "phome_ecms_news_doc",
+          "field_count": 37,
+          "json_path": "tables.phome_ecms_news_doc"
+        },
+        {
+          "title": "phome_ecms_news_doc_data",
+          "field_count": 13,
+          "json_path": "tables.phome_ecms_news_doc_data"
+        },
+        {
+          "title": "phome_ecms_news_doc_index",
+          "field_count": 7,
+          "json_path": "tables.phome_ecms_news_doc_index"
+        },
+        {
+          "title": "phome_ecms_news_index",
+          "field_count": 7,
+          "json_path": "tables.phome_ecms_news_index"
+        },
+        {
+          "title": "phome_enewsad",
+          "field_count": 20,
+          "json_path": "tables.phome_enewsad"
+        },
+        {
+          "title": "phome_enewsadclass",
+          "field_count": 2,
+          "json_path": "tables.phome_enewsadclass"
+        },
+        {
+          "title": "phome_enewsadminstyle",
+          "field_count": 4,
+          "json_path": "tables.phome_enewsadminstyle"
+        },
+        {
+          "title": "phome_enewsag",
+          "field_count": 4,
+          "json_path": "tables.phome_enewsag"
+        },
+        {
+          "title": "phome_enewsautodo",
+          "field_count": 13,
+          "json_path": "tables.phome_enewsautodo"
+        },
+        {
+          "title": "phome_enewsbefrom",
+          "field_count": 3,
+          "json_path": "tables.phome_enewsbefrom"
+        },
+        {
+          "title": "phome_enewsbq",
+          "field_count": 10,
+          "json_path": "tables.phome_enewsbq"
+        },
+        {
+          "title": "phome_enewsbqclass",
+          "field_count": 2,
+          "json_path": "tables.phome_enewsbqclass"
+        },
+        {
+          "title": "phome_enewsbqtemp",
+          "field_count": 10,
+          "json_path": "tables.phome_enewsbqtemp"
+        },
+        {
+          "title": "phome_enewsbqtempclass",
+          "field_count": 2,
+          "json_path": "tables.phome_enewsbqtempclass"
+        },
+        {
+          "title": "phome_enewsbuybak",
+          "field_count": 9,
+          "json_path": "tables.phome_enewsbuybak"
+        },
+        {
+          "title": "phome_enewsbuygroup",
+          "field_count": 10,
+          "json_path": "tables.phome_enewsbuygroup"
+        },
+        {
+          "title": "phome_enewscard",
+          "field_count": 10,
+          "json_path": "tables.phome_enewscard"
+        },
+        {
+          "title": "phome_enewsclass",
+          "field_count": 86,
+          "json_path": "tables.phome_enewsclass"
+        },
+        {
+          "title": "phome_enewsclass_stats",
+          "field_count": 18,
+          "json_path": "tables.phome_enewsclass_stats"
+        },
+        {
+          "title": "phome_enewsclass_stats_ip",
+          "field_count": 1,
+          "json_path": "tables.phome_enewsclass_stats_ip"
+        },
+        {
+          "title": "phome_enewsclass_stats_set",
+          "field_count": 4,
+          "json_path": "tables.phome_enewsclass_stats_set"
+        },
+        {
+          "title": "phome_enewsclassadd",
+          "field_count": 4,
+          "json_path": "tables.phome_enewsclassadd"
+        },
+        {
+          "title": "phome_enewsclassf",
+          "field_count": 11,
+          "json_path": "tables.phome_enewsclassf"
+        },
+        {
+          "title": "phome_enewsclassnavcache",
+          "field_count": 3,
+          "json_path": "tables.phome_enewsclassnavcache"
+        },
+        {
+          "title": "phome_enewsclasstemp",
+          "field_count": 4,
+          "json_path": "tables.phome_enewsclasstemp"
+        },
+        {
+          "title": "phome_enewsclasstempclass",
+          "field_count": 2,
+          "json_path": "tables.phome_enewsclasstempclass"
+        },
+        {
+          "title": "phome_enewsdiggips",
+          "field_count": 3,
+          "json_path": "tables.phome_enewsdiggips"
+        },
+        {
+          "title": "phome_enewsdo",
+          "field_count": 7,
+          "json_path": "tables.phome_enewsdo"
+        },
+        {
+          "title": "phome_enewsdolog",
+          "field_count": 9,
+          "json_path": "tables.phome_enewsdolog"
+        },
+        {
+          "title": "phome_enewsdownerror",
+          "field_count": 8,
+          "json_path": "tables.phome_enewsdownerror"
+        },
+        {
+          "title": "phome_enewsdownrecord",
+          "field_count": 9,
+          "json_path": "tables.phome_enewsdownrecord"
+        },
+        {
+          "title": "phome_enewsdownurlqz",
+          "field_count": 4,
+          "json_path": "tables.phome_enewsdownurlqz"
+        },
+        {
+          "title": "phome_enewsdtuserpage",
+          "field_count": 17,
+          "json_path": "tables.phome_enewsdtuserpage"
+        },
+        {
+          "title": "phome_enewsdtuserpageclass",
+          "field_count": 3,
+          "json_path": "tables.phome_enewsdtuserpageclass"
+        },
+        {
+          "title": "phome_enewserrorclass",
+          "field_count": 2,
+          "json_path": "tables.phome_enewserrorclass"
+        },
+        {
+          "title": "phome_enewsf",
+          "field_count": 37,
+          "json_path": "tables.phome_enewsf"
+        },
+        {
+          "title": "phome_enewsfava",
+          "field_count": 7,
+          "json_path": "tables.phome_enewsfava"
+        },
+        {
+          "title": "phome_enewsfavaclass",
+          "field_count": 3,
+          "json_path": "tables.phome_enewsfavaclass"
+        },
+        {
+          "title": "phome_enewsfeedback",
+          "field_count": 19,
+          "json_path": "tables.phome_enewsfeedback"
+        },
+        {
+          "title": "phome_enewsfeedbackclass",
+          "field_count": 10,
+          "json_path": "tables.phome_enewsfeedbackclass"
+        },
+        {
+          "title": "phome_enewsfeedbackf",
+          "field_count": 10,
+          "json_path": "tables.phome_enewsfeedbackf"
+        },
+        {
+          "title": "phome_enewsfile_1",
+          "field_count": 17,
+          "json_path": "tables.phome_enewsfile_1"
+        },
+        {
+          "title": "phome_enewsfile_member",
+          "field_count": 17,
+          "json_path": "tables.phome_enewsfile_member"
+        },
+        {
+          "title": "phome_enewsfile_other",
+          "field_count": 17,
+          "json_path": "tables.phome_enewsfile_other"
+        },
+        {
+          "title": "phome_enewsfile_public",
+          "field_count": 17,
+          "json_path": "tables.phome_enewsfile_public"
+        },
+        {
+          "title": "phome_enewsfileclass",
+          "field_count": 4,
+          "json_path": "tables.phome_enewsfileclass"
+        },
+        {
+          "title": "phome_enewsfileclasst",
+          "field_count": 4,
+          "json_path": "tables.phome_enewsfileclasst"
+        },
+        {
+          "title": "phome_enewsformhash",
+          "field_count": 5,
+          "json_path": "tables.phome_enewsformhash"
+        },
+        {
+          "title": "phome_enewsfz_class",
+          "field_count": 15,
+          "json_path": "tables.phome_enewsfz_class"
+        },
+        {
+          "title": "phome_enewsfz_data_1",
+          "field_count": 10,
+          "json_path": "tables.phome_enewsfz_data_1"
+        },
+        {
+          "title": "phome_enewsfz_data_check",
+          "field_count": 10,
+          "json_path": "tables.phome_enewsfz_data_check"
+        },
+        {
+          "title": "phome_enewsfz_info",
+          "field_count": 11,
+          "json_path": "tables.phome_enewsfz_info"
+        },
+        {
+          "title": "phome_enewsfz_infoclass",
+          "field_count": 2,
+          "json_path": "tables.phome_enewsfz_infoclass"
+        },
+        {
+          "title": "phome_enewsfz_set",
+          "field_count": 5,
+          "json_path": "tables.phome_enewsfz_set"
+        },
+        {
+          "title": "phome_enewsgbook",
+          "field_count": 14,
+          "json_path": "tables.phome_enewsgbook"
+        },
+        {
+          "title": "phome_enewsgbookclass",
+          "field_count": 4,
+          "json_path": "tables.phome_enewsgbookclass"
+        },
+        {
+          "title": "phome_enewsgfenip",
+          "field_count": 2,
+          "json_path": "tables.phome_enewsgfenip"
+        },
+        {
+          "title": "phome_enewsgoodtype",
+          "field_count": 9,
+          "json_path": "tables.phome_enewsgoodtype"
+        },
+        {
+          "title": "phome_enewsgroup",
+          "field_count": 122,
+          "json_path": "tables.phome_enewsgroup"
+        },
+        {
+          "title": "phome_enewshmsg",
+          "field_count": 10,
+          "json_path": "tables.phome_enewshmsg"
+        },
+        {
+          "title": "phome_enewshnotice",
+          "field_count": 8,
+          "json_path": "tables.phome_enewshnotice"
+        },
+        {
+          "title": "phome_enewshy",
+          "field_count": 5,
+          "json_path": "tables.phome_enewshy"
+        },
+        {
+          "title": "phome_enewshyclass",
+          "field_count": 3,
+          "json_path": "tables.phome_enewshyclass"
+        },
+        {
+          "title": "phome_enewsindexpage",
+          "field_count": 3,
+          "json_path": "tables.phome_enewsindexpage"
+        },
+        {
+          "title": "phome_enewsinfoclass",
+          "field_count": 61,
+          "json_path": "tables.phome_enewsinfoclass"
+        },
+        {
+          "title": "phome_enewsinfotype",
+          "field_count": 27,
+          "json_path": "tables.phome_enewsinfotype"
+        },
+        {
+          "title": "phome_enewsinfovote",
+          "field_count": 17,
+          "json_path": "tables.phome_enewsinfovote"
+        },
+        {
+          "title": "phome_enewsingroup",
+          "field_count": 3,
+          "json_path": "tables.phome_enewsingroup"
+        },
+        {
+          "title": "phome_enewsjstemp",
+          "field_count": 9,
+          "json_path": "tables.phome_enewsjstemp"
+        },
+        {
+          "title": "phome_enewsjstempclass",
+          "field_count": 2,
+          "json_path": "tables.phome_enewsjstempclass"
+        },
+        {
+          "title": "phome_enewskey",
+          "field_count": 4,
+          "json_path": "tables.phome_enewskey"
+        },
+        {
+          "title": "phome_enewskeyclass",
+          "field_count": 2,
+          "json_path": "tables.phome_enewskeyclass"
+        },
+        {
+          "title": "phome_enewslink",
+          "field_count": 15,
+          "json_path": "tables.phome_enewslink"
+        },
+        {
+          "title": "phome_enewslinkclass",
+          "field_count": 2,
+          "json_path": "tables.phome_enewslinkclass"
+        },
+        {
+          "title": "phome_enewslinktmp",
+          "field_count": 4,
+          "json_path": "tables.phome_enewslinktmp"
+        },
+        {
+          "title": "phome_enewslisttemp",
+          "field_count": 12,
+          "json_path": "tables.phome_enewslisttemp"
+        },
+        {
+          "title": "phome_enewslisttempclass",
+          "field_count": 2,
+          "json_path": "tables.phome_enewslisttempclass"
+        },
+        {
+          "title": "phome_enewslog",
+          "field_count": 10,
+          "json_path": "tables.phome_enewslog"
+        },
+        {
+          "title": "phome_enewsloginfail",
+          "field_count": 3,
+          "json_path": "tables.phome_enewsloginfail"
+        },
+        {
+          "title": "phome_enewsloginfail_u",
+          "field_count": 3,
+          "json_path": "tables.phome_enewsloginfail_u"
+        },
+        {
+          "title": "phome_enewsmember",
+          "field_count": 25,
+          "json_path": "tables.phome_enewsmember"
+        },
+        {
+          "title": "phome_enewsmember_connect",
+          "field_count": 7,
+          "json_path": "tables.phome_enewsmember_connect"
+        },
+        {
+          "title": "phome_enewsmember_connect_app",
+          "field_count": 9,
+          "json_path": "tables.phome_enewsmember_connect_app"
+        },
+        {
+          "title": "phome_enewsmemberadd",
+          "field_count": 24,
+          "json_path": "tables.phome_enewsmemberadd"
+        },
+        {
+          "title": "phome_enewsmemberf",
+          "field_count": 11,
+          "json_path": "tables.phome_enewsmemberf"
+        },
+        {
+          "title": "phome_enewsmemberfeedback",
+          "field_count": 17,
+          "json_path": "tables.phome_enewsmemberfeedback"
+        },
+        {
+          "title": "phome_enewsmemberform",
+          "field_count": 14,
+          "json_path": "tables.phome_enewsmemberform"
+        },
+        {
+          "title": "phome_enewsmembergbook",
+          "field_count": 12,
+          "json_path": "tables.phome_enewsmembergbook"
+        },
+        {
+          "title": "phome_enewsmembergroup",
+          "field_count": 17,
+          "json_path": "tables.phome_enewsmembergroup"
+        },
+        {
+          "title": "phome_enewsmemberphno",
+          "field_count": 3,
+          "json_path": "tables.phome_enewsmemberphno"
+        },
+        {
+          "title": "phome_enewsmemberpub",
+          "field_count": 6,
+          "json_path": "tables.phome_enewsmemberpub"
+        },
+        {
+          "title": "phome_enewsmembertitle",
+          "field_count": 5,
+          "json_path": "tables.phome_enewsmembertitle"
+        },
+        {
+          "title": "phome_enewsmenu",
+          "field_count": 6,
+          "json_path": "tables.phome_enewsmenu"
+        },
+        {
+          "title": "phome_enewsmenuclass",
+          "field_count": 6,
+          "json_path": "tables.phome_enewsmenuclass"
+        },
+        {
+          "title": "phome_enewsmod",
+          "field_count": 32,
+          "json_path": "tables.phome_enewsmod"
+        },
+        {
+          "title": "phome_enewsmodlist",
+          "field_count": 13,
+          "json_path": "tables.phome_enewsmodlist"
+        },
+        {
+          "title": "phome_enewsmoreport",
+          "field_count": 13,
+          "json_path": "tables.phome_enewsmoreport"
+        },
+        {
+          "title": "phome_enewsnewstemp",
+          "field_count": 7,
+          "json_path": "tables.phome_enewsnewstemp"
+        },
+        {
+          "title": "phome_enewsnewstempclass",
+          "field_count": 2,
+          "json_path": "tables.phome_enewsnewstempclass"
+        },
+        {
+          "title": "phome_enewsnotcj",
+          "field_count": 2,
+          "json_path": "tables.phome_enewsnotcj"
+        },
+        {
+          "title": "phome_enewsnotice",
+          "field_count": 8,
+          "json_path": "tables.phome_enewsnotice"
+        },
+        {
+          "title": "phome_enewspage",
+          "field_count": 11,
+          "json_path": "tables.phome_enewspage"
+        },
+        {
+          "title": "phome_enewspageclass",
+          "field_count": 2,
+          "json_path": "tables.phome_enewspageclass"
+        },
+        {
+          "title": "phome_enewspagetemp",
+          "field_count": 3,
+          "json_path": "tables.phome_enewspagetemp"
+        },
+        {
+          "title": "phome_enewspayapi",
+          "field_count": 23,
+          "json_path": "tables.phome_enewspayapi"
+        },
+        {
+          "title": "phome_enewspayrecord",
+          "field_count": 18,
+          "json_path": "tables.phome_enewspayrecord"
+        },
+        {
+          "title": "phome_enewspayrecordst",
+          "field_count": 18,
+          "json_path": "tables.phome_enewspayrecordst"
+        },
+        {
+          "title": "phome_enewsphmsg",
+          "field_count": 13,
+          "json_path": "tables.phome_enewsphmsg"
+        },
+        {
+          "title": "phome_enewspic",
+          "field_count": 10,
+          "json_path": "tables.phome_enewspic"
+        },
+        {
+          "title": "phome_enewspicclass",
+          "field_count": 2,
+          "json_path": "tables.phome_enewspicclass"
+        },
+        {
+          "title": "phome_enewspl_1",
+          "field_count": 14,
+          "json_path": "tables.phome_enewspl_1"
+        },
+        {
+          "title": "phome_enewspl_set",
+          "field_count": 20,
+          "json_path": "tables.phome_enewspl_set"
+        },
+        {
+          "title": "phome_enewsplayer",
+          "field_count": 4,
+          "json_path": "tables.phome_enewsplayer"
+        },
+        {
+          "title": "phome_enewsplf",
+          "field_count": 7,
+          "json_path": "tables.phome_enewsplf"
+        },
+        {
+          "title": "phome_enewspltemp",
+          "field_count": 4,
+          "json_path": "tables.phome_enewspltemp"
+        },
+        {
+          "title": "phome_enewspostdata",
+          "field_count": 4,
+          "json_path": "tables.phome_enewspostdata"
+        },
+        {
+          "title": "phome_enewspostserver",
+          "field_count": 14,
+          "json_path": "tables.phome_enewspostserver"
+        },
+        {
+          "title": "phome_enewsprinttemp",
+          "field_count": 6,
+          "json_path": "tables.phome_enewsprinttemp"
+        },
+        {
+          "title": "phome_enewspublic",
+          "field_count": 286,
+          "json_path": "tables.phome_enewspublic"
+        },
+        {
+          "title": "phome_enewspublic_fc",
+          "field_count": 2,
+          "json_path": "tables.phome_enewspublic_fc"
+        },
+        {
+          "title": "phome_enewspublic_up",
+          "field_count": 13,
+          "json_path": "tables.phome_enewspublic_up"
+        },
+        {
+          "title": "phome_enewspublicadd",
+          "field_count": 73,
+          "json_path": "tables.phome_enewspublicadd"
+        },
+        {
+          "title": "phome_enewspubtemp",
+          "field_count": 20,
+          "json_path": "tables.phome_enewspubtemp"
+        },
+        {
+          "title": "phome_enewspubvar",
+          "field_count": 8,
+          "json_path": "tables.phome_enewspubvar"
+        },
+        {
+          "title": "phome_enewspubvarclass",
+          "field_count": 3,
+          "json_path": "tables.phome_enewspubvarclass"
+        },
+        {
+          "title": "phome_enewsqmsg",
+          "field_count": 10,
+          "json_path": "tables.phome_enewsqmsg"
+        },
+        {
+          "title": "phome_enewssearch",
+          "field_count": 16,
+          "json_path": "tables.phome_enewssearch"
+        },
+        {
+          "title": "phome_enewssearchall",
+          "field_count": 6,
+          "json_path": "tables.phome_enewssearchall"
+        },
+        {
+          "title": "phome_enewssearchall_load",
+          "field_count": 8,
+          "json_path": "tables.phome_enewssearchall_load"
+        },
+        {
+          "title": "phome_enewssearchtemp",
+          "field_count": 12,
+          "json_path": "tables.phome_enewssearchtemp"
+        },
+        {
+          "title": "phome_enewssearchtempclass",
+          "field_count": 2,
+          "json_path": "tables.phome_enewssearchtempclass"
+        },
+        {
+          "title": "phome_enewssearchurl",
+          "field_count": 5,
+          "json_path": "tables.phome_enewssearchurl"
+        },
+        {
+          "title": "phome_enewsshop_address",
+          "field_count": 14,
+          "json_path": "tables.phome_enewsshop_address"
+        },
+        {
+          "title": "phome_enewsshop_ddlog",
+          "field_count": 8,
+          "json_path": "tables.phome_enewsshop_ddlog"
+        },
+        {
+          "title": "phome_enewsshop_precode",
+          "field_count": 13,
+          "json_path": "tables.phome_enewsshop_precode"
+        },
+        {
+          "title": "phome_enewsshop_set",
+          "field_count": 17,
+          "json_path": "tables.phome_enewsshop_set"
+        },
+        {
+          "title": "phome_enewsshopdd",
+          "field_count": 34,
+          "json_path": "tables.phome_enewsshopdd"
+        },
+        {
+          "title": "phome_enewsshopdd_add",
+          "field_count": 4,
+          "json_path": "tables.phome_enewsshopdd_add"
+        },
+        {
+          "title": "phome_enewsshoppayfs",
+          "field_count": 8,
+          "json_path": "tables.phome_enewsshoppayfs"
+        },
+        {
+          "title": "phome_enewsshopps",
+          "field_count": 7,
+          "json_path": "tables.phome_enewsshopps"
+        },
+        {
+          "title": "phome_enewssp",
+          "field_count": 21,
+          "json_path": "tables.phome_enewssp"
+        },
+        {
+          "title": "phome_enewssp_1",
+          "field_count": 11,
+          "json_path": "tables.phome_enewssp_1"
+        },
+        {
+          "title": "phome_enewssp_2",
+          "field_count": 5,
+          "json_path": "tables.phome_enewssp_2"
+        },
+        {
+          "title": "phome_enewssp_3",
+          "field_count": 3,
+          "json_path": "tables.phome_enewssp_3"
+        },
+        {
+          "title": "phome_enewssp_3_bak",
+          "field_count": 6,
+          "json_path": "tables.phome_enewssp_3_bak"
+        },
+        {
+          "title": "phome_enewsspacestyle",
+          "field_count": 7,
+          "json_path": "tables.phome_enewsspacestyle"
+        },
+        {
+          "title": "phome_enewsspclass",
+          "field_count": 3,
+          "json_path": "tables.phome_enewsspclass"
+        },
+        {
+          "title": "phome_enewssql",
+          "field_count": 3,
+          "json_path": "tables.phome_enewssql"
+        },
+        {
+          "title": "phome_enewstable",
+          "field_count": 10,
+          "json_path": "tables.phome_enewstable"
+        },
+        {
+          "title": "phome_enewstags",
+          "field_count": 13,
+          "json_path": "tables.phome_enewstags"
+        },
+        {
+          "title": "phome_enewstagsclass",
+          "field_count": 2,
+          "json_path": "tables.phome_enewstagsclass"
+        },
+        {
+          "title": "phome_enewstagsdata",
+          "field_count": 6,
+          "json_path": "tables.phome_enewstagsdata"
+        },
+        {
+          "title": "phome_enewstagsdata_check",
+          "field_count": 6,
+          "json_path": "tables.phome_enewstagsdata_check"
+        },
+        {
+          "title": "phome_enewstask",
+          "field_count": 10,
+          "json_path": "tables.phome_enewstask"
+        },
+        {
+          "title": "phome_enewstempbak",
+          "field_count": 17,
+          "json_path": "tables.phome_enewstempbak"
+        },
+        {
+          "title": "phome_enewstempdt",
+          "field_count": 7,
+          "json_path": "tables.phome_enewstempdt"
+        },
+        {
+          "title": "phome_enewstempgroup",
+          "field_count": 3,
+          "json_path": "tables.phome_enewstempgroup"
+        },
+        {
+          "title": "phome_enewstempvar",
+          "field_count": 7,
+          "json_path": "tables.phome_enewstempvar"
+        },
+        {
+          "title": "phome_enewstempvarclass",
+          "field_count": 2,
+          "json_path": "tables.phome_enewstempvarclass"
+        },
+        {
+          "title": "phome_enewstogzts",
+          "field_count": 14,
+          "json_path": "tables.phome_enewstogzts"
+        },
+        {
+          "title": "phome_enewsuser",
+          "field_count": 39,
+          "json_path": "tables.phome_enewsuser"
+        },
+        {
+          "title": "phome_enewsuser_save",
+          "field_count": 5,
+          "json_path": "tables.phome_enewsuser_save"
+        },
+        {
+          "title": "phome_enewsuseradd",
+          "field_count": 9,
+          "json_path": "tables.phome_enewsuseradd"
+        },
+        {
+          "title": "phome_enewsuserclass",
+          "field_count": 2,
+          "json_path": "tables.phome_enewsuserclass"
+        },
+        {
+          "title": "phome_enewsuserjs",
+          "field_count": 7,
+          "json_path": "tables.phome_enewsuserjs"
+        },
+        {
+          "title": "phome_enewsuserjsclass",
+          "field_count": 2,
+          "json_path": "tables.phome_enewsuserjsclass"
+        },
+        {
+          "title": "phome_enewsuserlist",
+          "field_count": 14,
+          "json_path": "tables.phome_enewsuserlist"
+        },
+        {
+          "title": "phome_enewsuserlistclass",
+          "field_count": 2,
+          "json_path": "tables.phome_enewsuserlistclass"
+        },
+        {
+          "title": "phome_enewsuserloginck",
+          "field_count": 4,
+          "json_path": "tables.phome_enewsuserloginck"
+        },
+        {
+          "title": "phome_enewsuseronepass",
+          "field_count": 11,
+          "json_path": "tables.phome_enewsuseronepass"
+        },
+        {
+          "title": "phome_enewsvg",
+          "field_count": 6,
+          "json_path": "tables.phome_enewsvg"
+        },
+        {
+          "title": "phome_enewsvglist",
+          "field_count": 4,
+          "json_path": "tables.phome_enewsvglist"
+        },
+        {
+          "title": "phome_enewsvote",
+          "field_count": 13,
+          "json_path": "tables.phome_enewsvote"
+        },
+        {
+          "title": "phome_enewsvotemod",
+          "field_count": 11,
+          "json_path": "tables.phome_enewsvotemod"
+        },
+        {
+          "title": "phome_enewsvotetemp",
+          "field_count": 3,
+          "json_path": "tables.phome_enewsvotetemp"
+        },
+        {
+          "title": "phome_enewswapstyle",
+          "field_count": 3,
+          "json_path": "tables.phome_enewswapstyle"
+        },
+        {
+          "title": "phome_enewswfinfo",
+          "field_count": 10,
+          "json_path": "tables.phome_enewswfinfo"
+        },
+        {
+          "title": "phome_enewswfinfolog",
+          "field_count": 10,
+          "json_path": "tables.phome_enewswfinfolog"
+        },
+        {
+          "title": "phome_enewswords",
+          "field_count": 3,
+          "json_path": "tables.phome_enewswords"
+        },
+        {
+          "title": "phome_enewsworkflow",
+          "field_count": 7,
+          "json_path": "tables.phome_enewsworkflow"
+        },
+        {
+          "title": "phome_enewsworkflowitem",
+          "field_count": 12,
+          "json_path": "tables.phome_enewsworkflowitem"
+        },
+        {
+          "title": "phome_enewswriter",
+          "field_count": 3,
+          "json_path": "tables.phome_enewswriter"
+        },
+        {
+          "title": "phome_enewsyh",
+          "field_count": 17,
+          "json_path": "tables.phome_enewsyh"
+        },
+        {
+          "title": "phome_enewszt",
+          "field_count": 30,
+          "json_path": "tables.phome_enewszt"
+        },
+        {
+          "title": "phome_enewsztadd",
+          "field_count": 2,
+          "json_path": "tables.phome_enewsztadd"
+        },
+        {
+          "title": "phome_enewsztclass",
+          "field_count": 2,
+          "json_path": "tables.phome_enewsztclass"
+        },
+        {
+          "title": "phome_enewsztf",
+          "field_count": 11,
+          "json_path": "tables.phome_enewsztf"
+        },
+        {
+          "title": "phome_enewsztinfo",
+          "field_count": 8,
+          "json_path": "tables.phome_enewsztinfo"
+        },
+        {
+          "title": "phome_enewszttype",
+          "field_count": 13,
+          "json_path": "tables.phome_enewszttype"
+        },
+        {
+          "title": "phome_enewszttypeadd",
+          "field_count": 2,
+          "json_path": "tables.phome_enewszttypeadd"
+        }
+      ]
+    },
+    {
+      "id": "ecms8-editordoc",
+      "title": "帝国CMS编辑管理手册",
+      "path": "empirecms8_editordoc.json",
+      "format": "json",
+      "language": "zh-CN",
+      "source_url": "http://www.phome.net/docs/editordoc/",
+      "cms_version": "8.0",
+      "title_source": "recovered from official section index <title> (JSON meta.title was placeholder '总览')",
+      "description": "帝国CMS 8.0 帝国CMS编辑管理手册。共 48 页，分为 10 个章节：下载模型相关、专题管理、信息管理、总览、插件管理、数据更新、新闻模型相关、标题分类管理、栏目管理、用户反馈系统。每页含清洗后的纯文本正文（HTML 标签已剥离、实体已解码，代码/标签语法保留）。",
+      "keywords": [
+        "下载模型相关",
+        "专题管理",
+        "信息管理",
+        "总览",
+        "插件管理",
+        "数据更新",
+        "新闻模型相关",
+        "标题分类管理",
+        "栏目管理",
+        "用户反馈系统",
+        "EmpireCMS",
+        "手册"
+      ],
+      "sections": [
+        {
+          "title": "下载模型相关",
+          "page_count": 6,
+          "pages": [
+            "downurl",
+            "deldownrecord",
+            "inforeport",
+            "repdownLevel",
+            "player",
+            "rss"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "专题管理",
+          "page_count": 4,
+          "pages": [
+            "addzt",
+            "listzt",
+            "upzt",
+            "ztf"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "信息管理",
+          "page_count": 4,
+          "pages": [
+            "addinfo",
+            "listinfo",
+            "fzinfo",
+            "htmleditor"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "总览",
+          "page_count": 1,
+          "pages": [
+            "xsjc"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "插件管理",
+          "page_count": 6,
+          "pages": [
+            "ad",
+            "vote",
+            "link",
+            "gbook",
+            "notcj",
+            "gfen"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "数据更新",
+          "page_count": 16,
+          "pages": [
+            "changedata",
+            "reinfourl",
+            "changepagecache",
+            "updgdata",
+            "pl",
+            "listfile",
+            "userpage",
+            "userlist",
+            "userjs",
+            "sp",
+            "tags",
+            "qfinfo",
+            "firsttitle",
+            "isgood",
+            "fieldand",
+            "dtuserpage"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "新闻模型相关",
+          "page_count": 4,
+          "pages": [
+            "befrom",
+            "writer",
+            "textkey",
+            "textword"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "标题分类管理",
+          "page_count": 2,
+          "pages": [
+            "addinfotype",
+            "listinfotype"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "栏目管理",
+          "page_count": 3,
+          "pages": [
+            "addclass",
+            "listclass",
+            "classf"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "用户反馈系统",
+          "page_count": 2,
+          "pages": [
+            "feedback",
+            "diyfeedback"
+          ],
+          "json_path": "pages.<page_id>.category"
+        }
+      ]
+    },
+    {
+      "id": "ecms8-extenddoc",
+      "title": "帝国CMS 8.0 二次开发手册",
+      "path": "empirecms8_extenddoc.json",
+      "format": "json",
+      "language": "zh-CN",
+      "source_url": "http://www.phome.net/docs/extenddoc/",
+      "cms_version": "8.0",
+      "title_source": "meta.title",
+      "description": "帝国CMS 8.0 帝国CMS 8.0 二次开发手册。共 13 页，分为 3 个章节：官方插件下载、二次开发说明、开发范例。每页含清洗后的纯文本正文（HTML 标签已剥离、实体已解码，代码/标签语法保留）。",
+      "keywords": [
+        "官方插件下载",
+        "二次开发说明",
+        "开发范例",
+        "EmpireCMS",
+        "手册"
+      ],
+      "sections": [
+        {
+          "title": "官方插件下载",
+          "page_count": 1,
+          "pages": [
+            "downtool"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "二次开发说明",
+          "page_count": 6,
+          "pages": [
+            "comfun",
+            "jsonfun",
+            "sqlfun",
+            "extendsay",
+            "dtuserpage",
+            "extendquestion"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "开发范例",
+          "page_count": 6,
+          "pages": [
+            "exp1helloworld",
+            "exp2newnews",
+            "exp3infolist",
+            "exp4jsonsql",
+            "exp5jsonclasspage",
+            "exp6jsoninfopage"
+          ],
+          "json_path": "pages.<page_id>.category"
+        }
+      ]
+    },
+    {
+      "id": "ecms8-memberdoc",
+      "title": "帝国CMS8.0版会员系统手册",
+      "path": "empirecms8_memberdoc.json",
+      "format": "json",
+      "language": "zh-CN",
+      "source_url": "http://www.phome.net/docs/memberdoc/",
+      "cms_version": "8.0",
+      "title_source": "recovered from official section index <title> (JSON meta.title was placeholder '总览')",
+      "description": "帝国CMS 8.0 帝国CMS8.0版会员系统手册。共 20 页，分为 5 个章节：会员相关说明文档、会员空间、会员管理、其他会员功能、总览。每页含清洗后的纯文本正文（HTML 标签已剥离、实体已解码，代码/标签语法保留）。",
+      "keywords": [
+        "会员相关说明文档",
+        "会员空间",
+        "会员管理",
+        "其他会员功能",
+        "总览",
+        "EmpireCMS",
+        "手册"
+      ],
+      "sections": [
+        {
+          "title": "会员相关说明文档",
+          "page_count": 2,
+          "pages": [
+            "membernamesay",
+            "dtpagetemp"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "会员空间",
+          "page_count": 2,
+          "pages": [
+            "spacestyle",
+            "spaceadmin"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "会员管理",
+          "page_count": 8,
+          "pages": [
+            "listmember",
+            "membergroup",
+            "ingroup",
+            "viewgroup",
+            "madmingroup",
+            "clearmember",
+            "memberfield",
+            "memberform"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "其他会员功能",
+          "page_count": 7,
+          "pages": [
+            "memberconnect",
+            "buygroup",
+            "listcard",
+            "getfen",
+            "sendemail",
+            "sendmsg",
+            "delmoremsg"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "总览",
+          "page_count": 1,
+          "pages": [
+            "mcquestion"
+          ],
+          "json_path": "pages.<page_id>.category"
+        }
+      ]
+    },
+    {
+      "id": "ecms8-moddoc",
+      "title": "帝国CMS8.0版系统模型扩展手册",
+      "path": "empirecms8_moddoc.json",
+      "format": "json",
+      "language": "zh-CN",
+      "source_url": "http://www.phome.net/docs/moddoc/",
+      "cms_version": "8.0",
+      "title_source": "recovered from official section index <title> (JSON meta.title was placeholder '总览')",
+      "description": "帝国CMS 8.0 帝国CMS8.0版系统模型扩展手册。共 13 页，分为 4 个章节：总览、系统模型功能说明、系统模型管理、自定义系统模型范例。每页含清洗后的纯文本正文（HTML 标签已剥离、实体已解码，代码/标签语法保留）。",
+      "keywords": [
+        "总览",
+        "系统模型功能说明",
+        "系统模型管理",
+        "自定义系统模型范例",
+        "EmpireCMS",
+        "手册"
+      ],
+      "sections": [
+        {
+          "title": "总览",
+          "page_count": 1,
+          "pages": [
+            "modusesay"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "系统模型功能说明",
+          "page_count": 5,
+          "pages": [
+            "modsay",
+            "makemod",
+            "syskeyfield",
+            "extendvar",
+            "jmmod"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "系统模型管理",
+          "page_count": 6,
+          "pages": [
+            "modtable",
+            "modfield",
+            "mod",
+            "modlist",
+            "moddatatable",
+            "loadmod"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "自定义系统模型范例",
+          "page_count": 1,
+          "pages": [
+            "productmod"
+          ],
+          "json_path": "pages.<page_id>.category"
+        }
+      ]
+    },
+    {
+      "id": "ecms8-setsafedoc",
+      "title": "帝国CMS安全设置手册",
+      "path": "empirecms8_setsafedoc.json",
+      "format": "json",
+      "language": "zh-CN",
+      "source_url": "http://www.phome.net/docs/setsafedoc/",
+      "cms_version": "8.0",
+      "title_source": "recovered from official section index <title> (JSON meta.title was placeholder '总览')",
+      "description": "帝国CMS 8.0 帝国CMS安全设置手册。共 29 页，分为 4 个章节：后台地址保护相关功能、后台总体安全设置、后台登录时安全验证功能、总览。每页含清洗后的纯文本正文（HTML 标签已剥离、实体已解码，代码/标签语法保留）。",
+      "keywords": [
+        "后台地址保护相关功能",
+        "后台总体安全设置",
+        "后台登录时安全验证功能",
+        "总览",
+        "EmpireCMS",
+        "手册"
+      ],
+      "sections": [
+        {
+          "title": "后台地址保护相关功能",
+          "page_count": 9,
+          "pages": [
+            "editadminpath",
+            "editadminloginfile",
+            "adminlogincs",
+            "setsafeuserag",
+            "setsafehviewpass",
+            "setsafeviewpass",
+            "setfwcandm",
+            "setfwcantime",
+            "setcloseip"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "后台总体安全设置",
+          "page_count": 5,
+          "pages": [
+            "setsafe",
+            "setfw",
+            "setonckpageurl",
+            "twosetsafe",
+            "setsafegood"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "后台登录时安全验证功能",
+          "page_count": 14,
+          "pages": [
+            "setloginauth",
+            "setloginqa",
+            "setalgckfile",
+            "setlguser",
+            "setalgenpassfile",
+            "setalgcertfile",
+            "setsafeenloginauth",
+            "setalgonepass",
+            "setsysckalgetype",
+            "setsafefromurl",
+            "setsysalgkey",
+            "setsysckmm",
+            "setfwclosestr",
+            "setalgac"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "总览",
+          "page_count": 1,
+          "pages": [
+            "safesay"
+          ],
+          "json_path": "pages.<page_id>.category"
+        }
+      ]
+    },
+    {
+      "id": "ecms8-tempdoc",
+      "title": "帝国CMS 8.0 模板制作手册",
+      "path": "empirecms8_tempdoc.json",
+      "format": "json",
+      "language": "zh-CN",
+      "source_url": "http://www.phome.net/docs/tempdoc/",
+      "cms_version": "8.0",
+      "title_source": "meta.title",
+      "description": "帝国CMS 8.0 帝国CMS 8.0 模板制作手册。共 42 页，分为 21 个章节：网站模板组成、调用标签、首页模板、封面模板、列表模板、内容模板、搜索模板、JS模板、评论模板、打印模板、投票模板、自定义页面模板、其它模板、公共模板变量、管理首页方案、修改模板ID、模板的导出与导入、其他管理、动态页面模板说明、模板使用常见问题与技巧、模板使用相关解密教程。每页含清洗后的纯文本正文（HTML 标签已剥离、实体已解码，代码/标签语法保留）。",
+      "keywords": [
+        "网站模板组成",
+        "调用标签",
+        "首页模板",
+        "封面模板",
+        "列表模板",
+        "内容模板",
+        "搜索模板",
+        "JS模板",
+        "评论模板",
+        "打印模板",
+        "投票模板",
+        "自定义页面模板",
+        "其它模板",
+        "公共模板变量",
+        "管理首页方案",
+        "修改模板ID",
+        "模板的导出与导入",
+        "其他管理",
+        "动态页面模板说明",
+        "模板使用常见问题与技巧",
+        "模板使用相关解密教程",
+        "EmpireCMS",
+        "手册"
+      ],
+      "sections": [
+        {
+          "title": "网站模板组成",
+          "page_count": 1,
+          "pages": [
+            "sitetemp"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "调用标签",
+          "page_count": 14,
+          "pages": [
+            "sysbq",
+            "ecmsinfo/ecmsinfo",
+            "eloop/eloop",
+            "makebq",
+            "bqaddsql",
+            "ecmsinfovseloop",
+            "bqtoflash",
+            "loadbq",
+            "userbq",
+            "phptoeloop",
+            "eloopgetclass",
+            "eloopgetdata",
+            "elooptotemp",
+            "ecmsinfototemp"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "首页模板",
+          "page_count": 1,
+          "pages": [
+            "indextemp"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "封面模板",
+          "page_count": 1,
+          "pages": [
+            "hmtemp"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "列表模板",
+          "page_count": 1,
+          "pages": [
+            "listtemp"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "内容模板",
+          "page_count": 1,
+          "pages": [
+            "newstemp"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "搜索模板",
+          "page_count": 1,
+          "pages": [
+            "searchtemp"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "JS模板",
+          "page_count": 1,
+          "pages": [
+            "jstemp"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "评论模板",
+          "page_count": 1,
+          "pages": [
+            "pltemp"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "打印模板",
+          "page_count": 1,
+          "pages": [
+            "printtemp"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "投票模板",
+          "page_count": 1,
+          "pages": [
+            "votetemp"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "自定义页面模板",
+          "page_count": 1,
+          "pages": [
+            "userpagetemp"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "其它模板",
+          "page_count": 9,
+          "pages": [
+            "plform",
+            "cptemp",
+            "searchform",
+            "loginform",
+            "schtemp",
+            "lytemp",
+            "pljstemp",
+            "loginiframe",
+            "loginjs"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "公共模板变量",
+          "page_count": 1,
+          "pages": [
+            "tempvar"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "管理首页方案",
+          "page_count": 1,
+          "pages": [
+            "indexpage"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "修改模板ID",
+          "page_count": 1,
+          "pages": [
+            "edittempid"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "模板的导出与导入",
+          "page_count": 1,
+          "pages": [
+            "tempgroup"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "其他管理",
+          "page_count": 1,
+          "pages": [
+            "tempother"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "动态页面模板说明",
+          "page_count": 1,
+          "pages": [
+            "dtpagetemp"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "模板使用常见问题与技巧",
+          "page_count": 1,
+          "pages": [
+            "qtemp"
+          ],
+          "json_path": "pages.<page_id>.category"
+        },
+        {
+          "title": "模板使用相关解密教程",
+          "page_count": 1,
+          "pages": [
+            "jmtemp"
+          ],
+          "json_path": "pages.<page_id>.category"
+        }
+      ]
+    },
+    {
+      "id": "ecms8-xsjc_install",
+      "title": "帝国CMS系统安装图文教程",
+      "path": "empirecms8_xsjc_install.json",
+      "format": "json",
+      "language": "zh-CN",
+      "source_url": "http://www.phome.net/docs/xsjc/install/",
+      "cms_version": "8.0",
+      "title_source": "meta.title",
+      "description": "帝国CMS 8.0 帝国CMS系统安装图文教程。共 1 页，分为 1 个章节：系统安装。每页含清洗后的纯文本正文（HTML 标签已剥离、实体已解码，代码/标签语法保留）。",
+      "keywords": [
+        "系统安装",
+        "EmpireCMS",
+        "手册"
+      ],
+      "sections": [
+        {
+          "title": "系统安装",
+          "page_count": 1,
+          "pages": [
+            "install"
+          ],
+          "json_path": "pages.<page_id>.category"
+        }
+      ]
+    }
+  ]
+}

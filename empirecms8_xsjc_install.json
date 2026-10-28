@@ -1,0 +1,39 @@
+{
+ "meta": {
+  "source": "http://www.phome.net/docs/xsjc/install/",
+  "section": "xsjc_install",
+  "title": "帝国CMS系统安装图文教程",
+  "version": "8.0",
+  "page_count": 1,
+  "categories": [
+   "系统安装"
+  ],
+  "order": [
+   "install"
+  ],
+  "schema": {
+   "pages": "single-page section, pages[install] holds the whole tutorial",
+   "record.content": "cleaned plain-text content (HTML tags stripped, entities decoded; code/paths preserved as readable text)",
+   "record.links": "external (non-phome.net/docs) links found in page"
+  }
+ },
+ "pages": {
+  "install": {
+   "id": "install",
+   "title": "帝国CMS系统安装图文教程",
+   "category": "系统安装",
+   "content": "帝国CMS系统安装图文教程 \n 帝国CMS系统安装图文教程 \n 帝国CMS \n － 稳定可靠、安全省心 \n 第一步：上传程序包 \n 将安装包的 upload 目录下的全部文件和目录上传到服务器。 \n 第二步：设置目录权限 \n 您在正式安装以前，需要设置相关的目录属性，以便数据文件可以被 EmpireCMS 正确的读写。使用 FTP 软件登录您的服务器，将服务器上以下的目录权限设置为 777。除“系统根目录”外，所有目录权限均要应用于子目录与文件。 \n (linux/unix系统下目录设置为0777权限，windows系统下用iis则目录设置为iis帐号读写权限。) \n 第三步：执行安装脚本 \n 请在浏览器中运行 /e/install/index.php，即访问 http://你的网址/e/install/index.php。 \n 1、访问后会出现如下图所示：提示“请先设置安装密码并验证密码”，点【确定】按钮： \n 2、按照页面提示设置安装密码： \n     修改 /e/install/ins_config.php 文件 \n 3、设置好安装密码后，刷新当前网页，并输入安装密码，点击【进入安装程序】按钮： \n 4、阅读许可协议，然后单击【我同意】按钮： \n 5、系统开始检测运行环境，如下图所示，然后单击【下一步】按钮： \n     PostgreSQL支持不是必须项。 \n 6、系统开始检测目录权限，如下图所示，然后单击【下一步】按钮： \n 7、选择对应的数据库类型，然后单击【下一步】按钮： \n     如果数据库类型列表里没有的，可以选择“其它MySQL‌内核的数据库”或“其它PostgreSQL‌内核的数据库”。 \n     比如：“国产瀚高数据库”选择“其它PostgreSQL‌内核的数据库”就可以安装成功。 \n      国产数据库推荐使用“国产金仓数据库(kingbase)”和“国产瀚高数据库”，因为有现成的使用案例，确认直接安装就能用、不需要特别配置。 \n 8、进入数据库配置界面，如下图所示： \n     输入您的空间或服务器的数据库信息，数据库服务器地址、数据库名、数据库用户名和数据库密码请咨询您的空间商或者服务器管理员。 \n    然后单击【下一步】按钮： \n     (注意事项：使用 PHP8以上环境 或者 使用PostgreSQL 必须填写已建好的数据库名。) \n 9、系统开始自动建立数据表，完成后自动转向下一步： \n 10、系统自动建立数据表成功后，就进入创建网站后台管理员账号信息界面，如下图所示： \n     填写好管理员登录信息后，点击【下一步】按钮。 \n 11、安装完成！ \n     安装完成后，请删除 /e/install/ 安装程序目录。 \n    然后用第10步设置的管理员信息登录后台管理。 \n 第四步：修改后台目录(不是必须项)。 \n 后台管理目录 /eadmin/ admin 可以任意重命名，如改为 /eadmin/ MYadmin888 \n 并且重命名文件夹后不需要任何设置，随时可任意修改。 \n 第五步：帝国CMS系统 安装完成。 \n [返回首页] \n Powered By EmpireCMS",
+   "links": [
+    {
+     "text": "帝国CMS \n    － 稳定可靠、安全省心",
+     "href": "http://www.phome.net"
+    },
+    {
+     "text": "EmpireCMS",
+     "href": "http://www.phome.net"
+    }
+   ],
+   "content_len": 1337
+  }
+ }
+}
